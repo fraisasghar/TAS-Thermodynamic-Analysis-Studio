@@ -894,6 +894,12 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
   import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1/dist/index.mjs';
   injectSpeedInsights();
 </script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-theme="dark">
 
