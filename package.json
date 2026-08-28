@@ -1,0 +1,19 @@
+{
+  "name": "tas-thermodynamic-analysis-studio",
+  "version": "1.0.0",
+  "description": "TAS: Thermodynamics Analysis Studio, an offline, single-file simulator",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraisasghar/TAS-Thermodynamic-Analysis-Studio.git"
+  },
+  "keywords": ["thermodynamics", "simulator", "analysis"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
