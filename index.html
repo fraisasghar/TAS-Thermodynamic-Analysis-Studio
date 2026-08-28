@@ -4,14 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="TAS: Thermodynamics Analysis Studio, an offline, single-file simulator covering 20 power, refrigeration, and heat-pump cycles.">
-<meta name="theme-color" content="#0b1220">
-<meta property="og:title" content="TAS: Thermodynamics Analysis Studio">
-<meta property="og:description" content="Interactive thermodynamics platform for exploring and analyzing power cycles through dynamic diagrams, live simulation, performance calculations, cycle comparison, graphs, optimization, and parametric studies.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tas-thermodynamic-analysis-studio.vercel.app/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TAS: Thermodynamics Analysis Studio">
-<meta name="twitter:description" content="Interactive thermodynamics platform for exploring and analyzing power cycles.">
 <title>TAS: Thermodynamics Analysis Studio</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <style>
@@ -1151,11 +1143,12 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
           <option value="All Engine Types">All Engine Types</option>
         </select>
 
-        <div class="combo-wrap">
+        <div class="combo-wrap" id="lbComboWrap">
           <input type="text" id="lbSearchFilter" placeholder="Search cycles&hellip;" autocomplete="off">
           <button class="tb-btn" type="button" id="lbSearchBtn" title="Search cycles" aria-label="Search cycles" style="background:var(--card-gray);color:var(--text)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="7"/><line x1="15.8" y1="15.8" x2="21.5" y2="21.5"/></svg>
           </button>
+          <ul id="lbSuggestList" class="suggest-list"></ul>
         </div>
 
         <div class="lb-inline-row">
@@ -3907,6 +3900,31 @@ function selectCycleFromSearch(name) {
   onCycleChanged(false);
 }
 
+// ---------------- Leaderboard search box (same pre-show + favorite-star pattern as Tab 1's Cycle Type search) ----------------
+function renderLbSuggestions(query) {
+  const list = document.getElementById('lbSuggestList');
+  const pool = CYCLE_DEFS.map(c => c.name);
+  const q = query.trim().toLowerCase();
+  const matches = q ? pool.filter(n => n.toLowerCase().includes(q)) : pool;
+  const sorted = matches.slice().sort((a, b) => (STATE.favorites.has(b) - STATE.favorites.has(a)) || a.localeCompare(b));
+  list.innerHTML = sorted.length ? sorted.map(n => `
+    <li data-name="${n}">
+      <span class="fav-star ${STATE.favorites.has(n) ? 'active' : ''}" data-fav="${n}" title="Toggle favorite">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="${STATE.favorites.has(n) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6"><polygon points="12,2.5 15.1,9.3 22.5,10.2 17,15.3 18.5,22.5 12,18.8 5.5,22.5 7,15.3 1.5,10.2 8.9,9.3"/></svg>
+      </span>
+      <span class="fav-name">${n}</span>
+    </li>`).join('') : `<li class="no-match">No cycles match "${query}".</li>`;
+  list.classList.add('open');
+}
+function closeLbSearch() {
+  document.getElementById('lbSuggestList').classList.remove('open');
+}
+function selectLbCycleFromSearch(name) {
+  document.getElementById('lbSearchFilter').value = name;
+  closeLbSearch();
+  renderLeaderboard();
+}
+
 function updateSliderFill(el) {
   const min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
   const pct = max > min ? ((val - min) / (max - min)) * 100 : 0;
@@ -6541,10 +6559,41 @@ function init() {
 
   document.getElementById('lbEngineFilter').addEventListener('change', renderLeaderboard);
   document.getElementById('lbFavoritesOnly').addEventListener('change', renderLeaderboard);
-  document.getElementById('lbSearchFilter').addEventListener('input', renderLeaderboard);
-  document.getElementById('lbSearchBtn').addEventListener('click', () => document.getElementById('lbSearchFilter').focus());
   document.getElementById('lbSortDir').addEventListener('change', renderLeaderboard);
   document.getElementById('lbShowLimit').addEventListener('change', renderLeaderboard);
+
+  const lbSearch = document.getElementById('lbSearchFilter');
+  lbSearch.addEventListener('input', () => { renderLbSuggestions(lbSearch.value); renderLeaderboard(); });
+  lbSearch.addEventListener('focus', () => renderLbSuggestions(lbSearch.value));
+  lbSearch.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLbSearch();
+    if (e.key === 'Enter') {
+      const first = document.getElementById('lbSuggestList').querySelector('li[data-name]');
+      if (first) selectLbCycleFromSearch(first.dataset.name);
+    }
+  });
+  document.getElementById('lbSearchBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    lbSearch.focus();
+    renderLbSuggestions(lbSearch.value);
+  });
+  document.getElementById('lbSuggestList').addEventListener('click', (e) => {
+    const star = e.target.closest('.fav-star');
+    if (star) {
+      e.stopPropagation();
+      const name = star.dataset.fav;
+      if (STATE.favorites.has(name)) STATE.favorites.delete(name); else STATE.favorites.add(name);
+      renderLbSuggestions(lbSearch.value);
+      renderLeaderboard();
+      return;
+    }
+    const li = e.target.closest('li');
+    if (li && li.dataset.name) selectLbCycleFromSearch(li.dataset.name);
+  });
+  document.addEventListener('click', (e) => {
+    const wrap = document.getElementById('lbComboWrap');
+    if (wrap && !wrap.contains(e.target)) closeLbSearch();
+  });
 
   document.getElementById('btnOpenCycleAdd').addEventListener('click', (e) => {
     e.stopPropagation();
