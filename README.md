@@ -1,19 +1,30 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=TAS&fontSize=60&fontAlign=50&fontAlignY=45&animation=fadeIn&fontColor=ffffff&desc=Thermodynamics%20Analysis%20Studio%20|%2020%20Cycles%20|%20Live%20Simulation%20|%20EES%20Export%20|%20Full%20Reports&descAlign=50&descAlignY=68&descSize=16&descColor=e0fbfc&shadow=true" alt="Header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:212529,50:495057,100:9c4221&height=200&section=header&text=TAS%20Lab&fontSize=60&fontAlign=50&fontAlignY=40&animation=fadeIn&fontColor=ffffff&desc=Thermodynamics%20Analysis%20Studio%20|%2020%20Cycles%20|%20Live%20Simulation%20|%20EES%20Export%20|%20Full%20Reports&descAlign=50&descAlignY=68&descSize=20&descColor=e0fbfc&shadow=true" alt="Header" />
 </div>
+
+
+
+
 
 <h3 align="center">A Single File Web App for Exploring, Simulating, and Reporting on 20 Power Cycles</h3>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Status-Live-00b4d8?style=for-the-badge&labelColor=0f2027" />
-  <img src="https://img.shields.io/badge/Cycles-20-4cc9f0?style=for-the-badge&labelColor=0f2027" />
-  <img src="https://img.shields.io/badge/Dependencies-Zero-ffb703?style=for-the-badge&labelColor=0f2027" />
-  <img src="https://img.shields.io/badge/Stack-HTML%20CSS%20JS-4361ee?style=for-the-badge&labelColor=0f2027" />
-  <img src="https://img.shields.io/badge/Export-9%20Formats-7209b7?style=for-the-badge&labelColor=0f2027" />
-  <img src="https://img.shields.io/badge/License-MIT-6c757d?style=for-the-badge&labelColor=0f2027" />
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Live-d84315?style=for-the-badge&labelColor=0f2027&logo=vercel&logoColor=f4ede4" />
+  <img src="https://img.shields.io/badge/Cycles-20-d84315?style=for-the-badge&labelColor=0f2027&logo=googleearth&logoColor=f4ede4" />
+  <img src="https://img.shields.io/badge/Stack-HTML%20CSS%20JS-d84315?style=for-the-badge&labelColor=0f2027&logo=html5&logoColor=f4ede4" />
+</p>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=2c5364&height=2">
+<p align="center">
+  <img src="https://img.shields.io/badge/Dependencies-Zero-5a189a?style=for-the-badge&labelColor=0f2027&logo=javascript&logoColor=f4ede4" />
+  <img src="https://img.shields.io/badge/Export-9%20Formats-5a189a?style=for-the-badge&labelColor=0f2027&logo=filedotio&logoColor=f4ede4" />
+  <img src="https://img.shields.io/badge/License-MIT-495057?style=for-the-badge&labelColor=0f2027&logo=opensourceinitiative&logoColor=f4ede4" />
+</p>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:212529,50:495057,100:9c4221&height=3">
+
+
+
+
 
 <div align="center">
 
@@ -190,3 +201,6 @@ Distributed under the MIT License. See `LICENSE` for details.
 <div align="center">
 <sub>Built by <a href="https://github.com/fraisasghar">Frais Asghar</a></sub>
 </div>
+
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:212529,50:495057,100:9c4221&height=3">
