@@ -220,14 +220,14 @@ Distributed under the MIT License. See `LICENSE` for details.
 <br>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/fraisasghar">Frais Asghar</a></sub>
+<p>Built by <a href="https://github.com/fraisasghar">Frais Asghar</a></p>
 </div>
 
 
 <div align="center">
 If this project was useful to you, consider giving it a star. ⭐
   
-<p2 align="center"><sub>Built for the Mechanical & Simulation community &nbsp;&middot;&nbsp; Happy building</sub></p2>
+<p3 align="center"><sub>Built for the Mechanical & Simulation community &nbsp;&middot;&nbsp; Happy building</sub></p3>
 </div>
 
 
