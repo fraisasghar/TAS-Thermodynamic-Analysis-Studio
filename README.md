@@ -129,24 +129,36 @@ The whole app, including the physics engine, UI, charts, and report generator, r
 
 <br>
 
-## How It Works
 
+
+
+
+
+
+## How It Works
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#495057', 'primaryTextColor':'#e0fbfc', 'primaryBorderColor':'#9c4221', 'lineColor':'#9c4221', 'secondaryColor':'#212529', 'tertiaryColor':'#343a40'}}}%%
 flowchart LR
     A[Set Inputs] --> B[Physics Engine]
     B --> C[State Points]
     C --> D[Live Diagram]
     C --> E[Results and Charts]
     C --> F[Report and EES Code]
+
+    classDef inputNode fill:#212529,stroke:#9c4221,stroke-width:2px,color:#e0fbfc
+    classDef coreNode fill:#495057,stroke:#9c4221,stroke-width:2px,color:#ffffff
+    classDef outputNode fill:#343a40,stroke:#9c4221,stroke-width:2px,color:#e0fbfc
+
+    class A inputNode
+    class B,C coreNode
+    class D,E,F outputNode
 ```
-
 Every output panel reads from the same state point data, so the diagram, charts, table, EES code, and report can never fall out of sync with each other.
-
 <br>
 
 ## Supported Cycles
-
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'pieOuterStrokeColor':'#e0fbfc', 'pieSectionTextColor':'#ffffff', 'pieTitleTextColor':'#e0fbfc', 'pieStrokeColor':'#212529', 'pieLegendTextColor':'#e0fbfc', 'pieOpacity':'1', 'pie1':'#e07a3f', 'pie2':'#c1652e', 'pie3':'#9c4221', 'pie4':'#adb5bd', 'pie5':'#6c757d', 'pie6':'#495057'}}}%%
 pie showData
     title 20 Cycles Across 6 Families
     "Gas Turbine" : 6
@@ -156,6 +168,15 @@ pie showData
     "Refrigeration and Heat Pump" : 2
     "Jet Propulsion" : 1
 ```
+
+
+
+
+
+
+
+
+
 
 **Reciprocating (Piston) Engines**: Otto, Diesel, Dual, Atkinson, Miller
 **External Combustion Engines**: Carnot, Stirling, Ericsson
