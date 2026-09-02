@@ -224,4 +224,12 @@ Distributed under the MIT License. See `LICENSE` for details.
 </div>
 
 
+<div align="center">
+If this project was useful to you, consider giving it a star. ⭐
+  
+<p2 align="center"><sub>Built for the Mechanical & Simulation community &nbsp;&middot;&nbsp; Happy building</sub></p2>
+</div>
+
+
+
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:212529,50:495057,100:9c4221&height=3">
