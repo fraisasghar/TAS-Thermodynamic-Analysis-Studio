@@ -14,7 +14,7 @@
   --text-secondary: #5a6478;
   --navy: #0b1220;
   --navy2: #172038;
-  --accent: #d9720f;
+  --accent: #1f6fe0;
   --blue: #1f6fe0;
   --green: #16a34a;
   --red: #dc2626;
@@ -52,8 +52,8 @@
   --text-secondary: #97a1b8;
   --navy: #05070d;
   --navy2: #111827;
-  --accent: #f0a441;
-  --blue: #559bf2;
+  --accent: #1d4ed8;
+  --blue: #1d4ed8;
   --green: #157a3f;
   --red: #f16a63;
   --warn: #f0b429;
@@ -71,7 +71,7 @@
   --shadow: 0 2px 12px rgba(0,0,0,0.45);
   --shadow-lift: 0 22px 46px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.45);
   --shadow-glow: 0 0 0 3px color-mix(in srgb, var(--blue) 25%, transparent), 0 12px 30px color-mix(in srgb, var(--blue) 30%, transparent);
-  --brand-grad: linear-gradient(135deg, #559bf2, #3bc0b8 55%, #f0a441);
+  --brand-grad: linear-gradient(135deg, #1d4ed8, #3bc0b8 55%, #f0a441);
   --page-grad: radial-gradient(1200px 650px at 10% -12%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 60%),
                radial-gradient(950px 550px at 102% 2%, rgba(240,164,65,0.10), transparent 55%),
                radial-gradient(800px 500px at 50% 115%, rgba(59,192,184,0.08), transparent 60%),
@@ -86,9 +86,9 @@
 
 /* ---------- Accent color schemes ---------- */
 [data-accent="teal"] { --blue: #0e9488; --accent: #0e9488; --card-blue: #e2f6f3; --card-blue-accent: #0a7268; --brand-grad: linear-gradient(135deg, #0e9488, #1f6fe0 55%, #d9720f); }
-[data-theme="dark"][data-accent="teal"] { --blue: #14b8b0; --accent: #14b8b0; --card-blue: #123330; --card-blue-accent: #6de0d2; --brand-grad: linear-gradient(135deg, #14b8b0, #559bf2 55%, #f0a441); }
+[data-theme="dark"][data-accent="teal"] { --blue: #0f766e; --accent: #0f766e; --card-blue: #123330; --card-blue-accent: #6de0d2; --brand-grad: linear-gradient(135deg, #0f766e, #559bf2 55%, #f0a441); }
 [data-accent="emerald"] { --blue: #12875a; --accent: #12875a; --card-blue: #e3f5ec; --card-blue-accent: #0d6b46; --brand-grad: linear-gradient(135deg, #12875a, #0e9488 55%, #d9720f); }
-[data-theme="dark"][data-accent="emerald"] { --blue: #22c55e; --accent: #22c55e; --card-blue: #123326; --card-blue-accent: #7ee6b5; --brand-grad: linear-gradient(135deg, #22c55e, #14b8b0 55%, #f0a441); }
+[data-theme="dark"][data-accent="emerald"] { --blue: #15803d; --accent: #15803d; --card-blue: #123326; --card-blue-accent: #7ee6b5; --brand-grad: linear-gradient(135deg, #15803d, #0f766e 55%, #f0a441); }
 [data-accent="amber"] { --blue: #b3720f; --accent: #b3720f; --card-blue: #faf0dd; --card-blue-accent: #8f5a0a; --brand-grad: linear-gradient(135deg, #b3720f, #d9720f 55%, #1f6fe0); }
 [data-theme="dark"][data-accent="amber"] { --blue: #f2a30f; --accent: #f2a30f; --card-blue: #332510; --card-blue-accent: #f7d38a; --brand-grad: linear-gradient(135deg, #f2a30f, #f0a441 55%, #559bf2); }
 [data-accent="crimson"] { --blue: #b8362f; --accent: #b8362f; --card-blue: #fbe8e6; --card-blue-accent: #8f2a2a; --brand-grad: linear-gradient(135deg, #b8362f, #d9720f 55%, #1f6fe0); }
@@ -294,57 +294,57 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 .ees-code.ees-ff-ubuntu { font-family: 'Ubuntu Mono', 'Consolas', monospace; letter-spacing: 0.3px; line-height: 1.55; font-weight: 700; }
 .ees-code.ees-ff-lucida { font-family: 'Lucida Console', Monaco, monospace; letter-spacing: 0.5px; line-height: 1.65; font-weight: 400; font-size: 0.92em; }
 .ees-code.ees-nowrap { white-space: pre; word-break: normal; }
-.ees-code-wrap.ees-theme-synthwave { background: #2a2139; }
-.ees-code.ees-theme-synthwave { color: #ffffff; }
-.ees-code.ees-theme-synthwave .ees-comment { color: #848bbd; font-style: italic; }
-.ees-code.ees-theme-synthwave .ees-directive { color: #36f9f6; }
-.ees-code-wrap.ees-theme-solarized { background: #002b36; }
-.ees-code.ees-theme-solarized { color: #93a1a1; }
-.ees-code.ees-theme-solarized .ees-comment { color: #586e75; }
-.ees-code.ees-theme-solarized .ees-directive { color: #268bd2; }
-.ees-code-wrap.ees-theme-tokyonight { background: #1a1b26; }
-.ees-code.ees-theme-tokyonight { color: #a9b1d6; }
-.ees-code.ees-theme-tokyonight .ees-comment { color: #565f89; }
-.ees-code.ees-theme-tokyonight .ees-directive { color: #bb9af7; }
-.ees-code-wrap.ees-theme-monokai { background: #272822; }
-.ees-code.ees-theme-monokai { color: #f8f8f2; }
-.ees-code.ees-theme-monokai .ees-comment { color: #75715e; }
-.ees-code.ees-theme-monokai .ees-directive { color: #66d9ef; }
-.ees-code-wrap.ees-theme-dracula { background: #282a36; }
-.ees-code.ees-theme-dracula { color: #f8f8f2; }
-.ees-code.ees-theme-dracula .ees-comment { color: #6272a4; }
-.ees-code.ees-theme-dracula .ees-directive { color: #8be9fd; }
-.ees-code-wrap.ees-theme-nord { background: #2e3440; }
-.ees-code.ees-theme-nord { color: #d8dee9; }
-.ees-code.ees-theme-nord .ees-comment { color: #616e88; }
-.ees-code.ees-theme-nord .ees-directive { color: #88c0d0; }
-.ees-code-wrap.ees-theme-gruvbox { background: #282828; }
-.ees-code.ees-theme-gruvbox { color: #ebdbb2; }
-.ees-code.ees-theme-gruvbox .ees-comment { color: #928374; font-style: italic; }
-.ees-code.ees-theme-gruvbox .ees-directive { color: #fe8019; }
-.ees-code-wrap.ees-theme-onedark { background: #282c34; }
-.ees-code.ees-theme-onedark { color: #abb2bf; }
-.ees-code.ees-theme-onedark .ees-comment { color: #5c6370; }
-.ees-code.ees-theme-onedark .ees-directive { color: #61afef; }
-.ees-code-wrap.ees-theme-cobalt2 { background: #193549; }
-.ees-code.ees-theme-cobalt2 { color: #ffffff; }
-.ees-code.ees-theme-cobalt2 .ees-comment { color: #7c8fa4; font-style: italic; }
-.ees-code.ees-theme-cobalt2 .ees-directive { color: #ffc600; }
-.ees-code-wrap.ees-theme-contrast { background: #000000; }
+.ees-code-wrap.ees-theme-contrast { background: #000000; --ees-accent: #00e5ff; }
 .ees-code.ees-theme-contrast { color: #ffffff; }
-.ees-code.ees-theme-contrast .ees-comment { color: #ffff00; }
-.ees-code.ees-theme-contrast .ees-directive { color: #00ffff; }
+.ees-code.ees-theme-contrast .ees-comment { color: #ffd60a; }
+.ees-code.ees-theme-contrast .ees-directive { color: #00e5ff; }
+.ees-code-wrap.ees-theme-emerald { background: #000000; --ees-accent: #22d3ee; }
+.ees-code.ees-theme-emerald { color: #e8fff4; }
+.ees-code.ees-theme-emerald .ees-comment { color: #4ade80; }
+.ees-code.ees-theme-emerald .ees-directive { color: #22d3ee; }
+.ees-code-wrap.ees-theme-amber { background: #000000; --ees-accent: #fbbf24; }
+.ees-code.ees-theme-amber { color: #fdf6e3; }
+.ees-code.ees-theme-amber .ees-comment { color: #d97706; }
+.ees-code.ees-theme-amber .ees-directive { color: #fbbf24; }
+.ees-code-wrap.ees-theme-violet { background: #000000; --ees-accent: #c084fc; }
+.ees-code.ees-theme-violet { color: #f5f3ff; }
+.ees-code.ees-theme-violet .ees-comment { color: #a78bfa; }
+.ees-code.ees-theme-violet .ees-directive { color: #c084fc; }
+.ees-code-wrap.ees-theme-crimson { background: #000000; --ees-accent: #fb7185; }
+.ees-code.ees-theme-crimson { color: #fff1f2; }
+.ees-code.ees-theme-crimson .ees-comment { color: #f43f5e; }
+.ees-code.ees-theme-crimson .ees-directive { color: #fb7185; }
+.ees-code-wrap.ees-theme-arctic { background: #000000; --ees-accent: #67e8f9; }
+.ees-code.ees-theme-arctic { color: #e0f2fe; }
+.ees-code.ees-theme-arctic .ees-comment { color: #38bdf8; }
+.ees-code.ees-theme-arctic .ees-directive { color: #67e8f9; }
+.ees-code-wrap.ees-theme-graphitegold { background: #000000; --ees-accent: #eab308; }
+.ees-code.ees-theme-graphitegold { color: #fafaf9; }
+.ees-code.ees-theme-graphitegold .ees-comment { color: #a8a29e; }
+.ees-code.ees-theme-graphitegold .ees-directive { color: #eab308; }
+.ees-code-wrap.ees-theme-paperink { background: #ffffff; --ees-accent: #1d4ed8; }
+.ees-code.ees-theme-paperink { color: #1e293b; }
+.ees-code.ees-theme-paperink .ees-comment { color: #15803d; }
+.ees-code.ees-theme-paperink .ees-directive { color: #1d4ed8; }
+.ees-code-wrap.ees-theme-blueprint { background: #ffffff; --ees-accent: #0369a1; }
+.ees-code.ees-theme-blueprint { color: #292524; }
+.ees-code.ees-theme-blueprint .ees-comment { color: #57534e; }
+.ees-code.ees-theme-blueprint .ees-directive { color: #0369a1; }
+.ees-code-wrap.ees-theme-manuscript { background: #ffffff; --ees-accent: #b91c1c; }
+.ees-code.ees-theme-manuscript { color: #0f172a; }
+.ees-code.ees-theme-manuscript .ees-comment { color: #475569; }
+.ees-code.ees-theme-manuscript .ees-directive { color: #b91c1c; }
 .ees-code .ees-lnrow { display: flex; border-radius: 3px; transition: background 0.1s ease; }
-.ees-code .ees-lnrow:hover { background: color-mix(in srgb, var(--blue) 10%, transparent); }
+.ees-code .ees-lnrow:hover { background: color-mix(in srgb, var(--ees-accent, var(--blue)) 14%, transparent); }
 .ees-code .ees-lnnum {
   flex: none; width: 38px; text-align: right; margin-right: 14px; padding-right: 10px;
-  font-variant-numeric: tabular-nums; color: color-mix(in srgb, var(--blue) 65%, var(--text-secondary));
-  border-right: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
+  font-variant-numeric: tabular-nums; color: color-mix(in srgb, var(--ees-accent, var(--blue)) 70%, currentColor);
+  border-right: 1px solid color-mix(in srgb, var(--ees-accent, var(--blue)) 30%, transparent);
   opacity: 0.85; user-select: none; visibility: hidden;
 }
 .ees-code.ees-shownum .ees-lnnum { visibility: visible; }
-.ees-code.ees-zebra .ees-lnrow:nth-child(even) { background: color-mix(in srgb, var(--blue) 7%, transparent); }
-.ees-code.ees-zebra .ees-lnrow:hover { background: color-mix(in srgb, var(--blue) 16%, transparent); }
+.ees-code.ees-zebra .ees-lnrow:nth-child(even) { background: color-mix(in srgb, var(--ees-accent, var(--blue)) 9%, transparent); }
+.ees-code.ees-zebra .ees-lnrow:hover { background: color-mix(in srgb, var(--ees-accent, var(--blue)) 20%, transparent); }
 .ees-process-summary { display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; color: var(--text); }
 .ees-process-summary .ees-proc-row { display: flex; justify-content: space-between; gap: 8px; padding: 4px 7px; border: 1px solid var(--border); border-radius: 4px; background: var(--card-gray); }
 .ees-process-summary .ees-proc-row span:last-child { font-weight: 700; color: var(--blue); }
@@ -537,8 +537,7 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
   border-top: 1px solid var(--border);
 }
 .action-bar .action-btn { margin-bottom: 0; width: auto; flex: 1 1 0; white-space: nowrap; font-size: 11.5px; padding: 7px 8px; }
-.action-bar .action-btn-primary { flex: 1.5 1 0; font-size: 12px; box-shadow: 0 4px 10px color-mix(in srgb, var(--blue) 28%, transparent); }
-.action-bar .action-btn-primary:hover { box-shadow: 0 7px 16px color-mix(in srgb, var(--blue) 36%, transparent); }
+.action-bar .action-btn-primary { flex: 1.5 1 0; font-size: 12px; }
 .action-divider { width: 1px; align-self: stretch; margin: 2px 1px; flex: none; background: var(--border); }
 .combo-wrap { position: relative; }
 .combo-wrap input { padding-right: 40px; cursor: pointer; }
@@ -672,11 +671,10 @@ input[type=color]::-moz-color-swatch { border: none; border-radius: 4px; }
 .p-sens.sens-down { color: #a52f2f; background: #fbdcd9; }
 [data-theme="dark"] .p-sens.sens-down { color: #f0a89f; background: #3a1c19; }
 .p-sens.sens-flat { color: var(--text-secondary); background: var(--card-gray); }
-.optimize-success#btnOptimize { animation: optimizeGlow 0.9s ease; }
-@keyframes optimizeGlow {
-  0% { box-shadow: 0 0 0 0 rgba(31,157,85,0.6); }
-  40% { box-shadow: 0 0 0 10px rgba(31,157,85,0); }
-  100% { box-shadow: 0 0 0 0 rgba(31,157,85,0); }
+.optimize-success#btnOptimize { animation: optimizeFlash 0.6s ease; }
+@keyframes optimizeFlash {
+  0% { filter: brightness(1.35); }
+  100% { filter: brightness(1); }
 }
 .param-slim.optimize-success { animation: rowFlash 1.1s ease; }
 @keyframes rowFlash {
@@ -700,20 +698,18 @@ button.action-btn {
   margin-bottom: 8px; position: relative; overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.15s ease;
 }
-.btn-blue { background: linear-gradient(135deg, var(--blue), #1558a0); color: #fff; }
-.btn-green { background: linear-gradient(135deg, var(--green), #157a41); color: #fff; }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-green { background: var(--green); color: #fff; }
 .btn-neutral { background: var(--card-gray); color: var(--text); }
 .btn-danger { background: #fbdcd9; color: #7a231c; }
 [data-theme="dark"] .btn-danger { background: #3a1c19; color: #f0a89f; }
 .btn-row { display: flex; gap: 8px; }
 .btn-row button { flex: 1; }
-button.action-btn:hover { filter: brightness(1.04); }
+button.action-btn { border: 1.5px solid transparent; }
+button.action-btn:hover { filter: none; border-color: rgba(255,255,255,0.5); }
+[data-theme="light"] button.action-btn:hover { border-color: rgba(0,0,0,0.25); }
 button.action-btn:active { transform: translateY(0) scale(0.97); transition: transform 0.08s ease; }
 .tb-btn:active, .theme-toggle:active, .icon-btn:active { transform: scale(0.94); transition: transform 0.08s ease; }
-.btn-blue:hover { box-shadow: 0 10px 22px color-mix(in srgb, var(--blue) 35%, transparent); }
-.btn-green:hover { box-shadow: 0 10px 22px rgba(31,157,85,0.32); }
-.btn-neutral:hover { box-shadow: 0 8px 18px rgba(20,30,50,0.16); }
-.btn-danger:hover { box-shadow: 0 8px 18px rgba(208,57,46,0.22); }
 .btn-glow-fx { display: none; }
 
 .eff-label { font-weight: 700; font-size: 12px; margin: 6px 0 5px; white-space: nowrap; }
@@ -726,7 +722,7 @@ button.action-btn:active { transform: translateY(0) scale(0.97); transition: tra
   box-shadow: 0 0 3px rgba(208,57,46,0.7);
 }
 .gauge-fill {
-  height: 100%; background: linear-gradient(90deg, var(--blue), var(--accent));
+  height: 100%; background: linear-gradient(90deg, color-mix(in srgb, var(--blue) 78%, black), var(--blue));
   transition: width 0.45s cubic-bezier(.2,.8,.3,1); position: relative; overflow: hidden;
 }
 .gauge-fill::after {
@@ -788,7 +784,7 @@ svg.diagram { display: block; width: 100%; height: 100%; min-height: 0; }
 .sim-stat-card:hover { box-shadow: 0 0 0 1.5px var(--sc, var(--blue)); }
 .sim-stat-card-muted { grid-column: 1 / -1; border-left-color: var(--text-secondary); }
 .sim-stat-label { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-secondary); margin-bottom: 3px; }
-.sim-stat-value { font-family: var(--font-mono); font-size: 17px; font-weight: 700; color: var(--sc, var(--text)); letter-spacing: -0.3px; }
+.sim-stat-value { font-size: 17px; font-weight: 800; color: var(--sc, var(--text)); letter-spacing: -0.2px; }
 .sim-stat-value-sm { font-size: 11.5px; font-weight: 700; color: var(--text-secondary); }
 .sim-stat-card.infeasible { border-left-color: var(--warn); }
 .sim-stat-card.infeasible .sim-stat-value { color: var(--warn); font-size: 13px; }
@@ -861,11 +857,11 @@ table.data-table tbody tr:hover { background: var(--card-blue); }
 .results-energyflow { padding: 14px 16px; }
 .energy-flow-bar { display: flex; width: 100%; height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); margin: 4px 0 10px; }
 .energy-flow-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; transition: width 0.3s ease; }
-.energy-flow-seg.seg-work { background: linear-gradient(135deg, #22c55e, #14b8b0); }
+.energy-flow-seg.seg-work { background: linear-gradient(135deg, #15803d, #0f766e); }
 .energy-flow-seg.seg-reject { background: linear-gradient(135deg, #64748b, #475569); }
 .energy-flow-legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-secondary); }
 .efl-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
-.efl-dot-work { background: #16a34a; }
+.efl-dot-work { background: #15803d; }
 .efl-dot-reject { background: #64748b; }
 .power-row { display: flex; gap: 10px; align-items: center; padding: 10px 14px; flex-wrap: wrap; }
 .power-row label { font-weight: 700; font-size: 12.5px; }
@@ -980,11 +976,10 @@ table.data-table.copyable tbody tr.row-copied { animation: rowCopiedFlash 0.6s e
 .tools-section-header span { font-size: 11.5px; color: var(--text-secondary); }
 .tools-section-header.tools-header-hero { flex-direction: column; align-items: center; gap: 6px; margin: 6px 0 16px; text-align: center; }
 .tools-section-header.tools-header-hero h2 {
-  font-size: 19px; letter-spacing: 0.2px;
-  background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-size: 19px; letter-spacing: 0.2px; color: var(--blue);
 }
 .tools-section-header.tools-header-hero h2::after {
-  content: ''; display: block; width: 56px; height: 3px; margin: 8px auto 0; border-radius: 3px; background: var(--brand-grad);
+  content: ''; display: block; width: 56px; height: 3px; margin: 8px auto 0; border-radius: 3px; background: var(--blue);
 }
 
 /* Worksheet-style list -- each tool is a full-width row split into an
@@ -1377,10 +1372,10 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
       <span class="accent-swatch" id="accentSwatch"></span>
     </button>
     <div class="accent-picker-pop" id="accentPickerPop">
-      <button class="accent-dot" data-accent="blue" style="--dot-c:#2f7de0;" title="Blue" aria-label="Blue accent"></button>
-      <button class="accent-dot" data-accent="teal" style="--dot-c:#14b8b0;" title="Teal" aria-label="Teal accent"></button>
+      <button class="accent-dot" data-accent="blue" style="--dot-c:#1d4ed8;" title="Blue" aria-label="Blue accent"></button>
+      <button class="accent-dot" data-accent="teal" style="--dot-c:#0f766e;" title="Teal" aria-label="Teal accent"></button>
       <button class="accent-dot" data-accent="violet" style="--dot-c:#8b5cf6;" title="Violet" aria-label="Violet accent"></button>
-      <button class="accent-dot" data-accent="emerald" style="--dot-c:#22c55e;" title="Emerald" aria-label="Emerald accent"></button>
+      <button class="accent-dot" data-accent="emerald" style="--dot-c:#15803d;" title="Emerald" aria-label="Emerald accent"></button>
       <button class="accent-dot" data-accent="crimson" style="--dot-c:#f0454f;" title="Crimson" aria-label="Crimson accent"></button>
       <button class="accent-dot" data-accent="amber" style="--dot-c:#f2a30f;" title="Amber" aria-label="Amber accent"></button>
       <button class="accent-dot" data-accent="slate" style="--dot-c:#64748b;" title="Slate" aria-label="Slate accent"></button>
@@ -1398,11 +1393,11 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
 </div>
 
 <div class="tabbar" id="tabbar">
-  <button class="tab-btn active" data-tab="setup">Cycle Setup &amp; Analysis</button>
-  <button class="tab-btn" data-tab="sim">Live Simulation</button>
-  <button class="tab-btn" data-tab="results">Results Table</button>
+  <button class="tab-btn active" data-tab="setup">Cycles Analysis</button>
+  <button class="tab-btn" data-tab="sim">Simulation</button>
+  <button class="tab-btn" data-tab="results">Results</button>
   <button class="tab-btn" data-tab="graphs">Graphs</button>
-  <button class="tab-btn" data-tab="compare">Compare Cycles</button>
+  <button class="tab-btn" data-tab="compare">Comparison</button>
   <button class="tab-btn" data-tab="param">Parametric Study</button>
   <button class="tab-btn" data-tab="theory">Theory &amp; Notes</button>
   <button class="tab-btn" data-tab="tools">Engineering Tools</button>
@@ -1502,7 +1497,7 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
               Copy<span class="btn-glow-fx"></span>
             </button>
-            <button class="action-btn btn-green" id="btnAddCompare" title="Save a snapshot to the Compare Cycles tab">
+            <button class="action-btn btn-green" id="btnAddCompare" title="Save a snapshot to the Comparison tab">
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg>
               Compare<span class="btn-glow-fx"></span>
             </button>
@@ -2163,16 +2158,16 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
         <div class="ctrl-row ees-group-b">
           <label class="graph-ctrl-label">Theme:</label>
           <select id="eesTheme">
-            <option value="synthwave">Synthwave '84</option>
-            <option value="solarized">Solarized Dark</option>
-            <option value="monokai">Monokai</option>
-            <option value="dracula">Dracula</option>
-            <option value="tokyonight">Tokyo Night</option>
-            <option value="nord">Nord</option>
-            <option value="gruvbox">Gruvbox Dark</option>
-            <option value="onedark">One Dark</option>
-            <option value="cobalt2">Cobalt2</option>
             <option value="contrast" selected>High Contrast</option>
+            <option value="emerald">Emerald Circuit</option>
+            <option value="amber">Amber Console</option>
+            <option value="violet">Royal Violet</option>
+            <option value="crimson">Crimson Ledger</option>
+            <option value="arctic">Arctic Frost</option>
+            <option value="graphitegold">Graphite Gold</option>
+            <option value="paperink">Paper &amp; Ink</option>
+            <option value="blueprint">Ivory Blueprint</option>
+            <option value="manuscript">Slate Manuscript</option>
           </select>
         </div>
         <div class="ctrl-row ees-group-b">
@@ -4050,20 +4045,44 @@ function renderTsDiagram(svg, r, opts) {
   const xScaleInv = makeInverseScale(sMin, sMax, marginL, marginL + plotW);
   const yScaleInv = makeInverseScale(TMin, TMax, marginT + plotH, marginT);
 
-  // background
+  // defs: soft radial background wash, an area-fill gradient under the
+  // curve, and a drop-shadow glow filter, all keyed to the current accent
+  // so the chart's whole look shifts with whichever color the user picked
+  const defId = 'ts' + Math.random().toString(36).slice(2, 9);
+  const defs = svgEl('defs', {});
+  const bgGrad = svgEl('radialGradient', { id: defId + 'bg', cx: '18%', cy: '10%', r: '95%' });
+  bgGrad.appendChild(svgEl('stop', { offset: '0%', 'stop-color': 'var(--accent)', 'stop-opacity': 0.07 }));
+  bgGrad.appendChild(svgEl('stop', { offset: '55%', 'stop-color': 'var(--accent)', 'stop-opacity': 0.02 }));
+  bgGrad.appendChild(svgEl('stop', { offset: '100%', 'stop-color': 'var(--accent)', 'stop-opacity': 0 }));
+  defs.appendChild(bgGrad);
+  const areaGrad = svgEl('linearGradient', { id: defId + 'area', x1: '0', y1: '0', x2: '0', y2: '1' });
+  areaGrad.appendChild(svgEl('stop', { offset: '0%', 'stop-color': 'var(--accent)', 'stop-opacity': 0.32 }));
+  areaGrad.appendChild(svgEl('stop', { offset: '100%', 'stop-color': 'var(--accent)', 'stop-opacity': 0 }));
+  defs.appendChild(areaGrad);
+  const glowFilter = svgEl('filter', { id: defId + 'glow', x: '-40%', y: '-40%', width: '180%', height: '180%' });
+  glowFilter.appendChild(svgEl('feGaussianBlur', { stdDeviation: 2.4, result: 'blur' }));
+  const feMerge = svgEl('feMerge', {});
+  feMerge.appendChild(svgEl('feMergeNode', { in: 'blur' }));
+  feMerge.appendChild(svgEl('feMergeNode', { in: 'SourceGraphic' }));
+  glowFilter.appendChild(feMerge);
+  defs.appendChild(glowFilter);
+  svg.appendChild(defs);
+
+  // background: subtle accent-tinted wash instead of a flat panel color
   svg.appendChild(svgEl('rect', { x: 0, y: 0, width: W, height: H, fill: 'var(--panel)' }));
+  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: W, height: H, fill: `url(#${defId}bg)` }));
 
   // grid + axes
   const xTicks = niceTicks(sMin - 0.12 * Math.max(sMax - sMin, 1), sMax + 0.12 * Math.max(sMax - sMin, 1), 11);
   const yTicks = niceTicks(TMin - 0.12 * Math.max(TMax - TMin, 10), TMax + 0.12 * Math.max(TMax - TMin, 10), 10);
   for (const xt of xTicks) {
     const px = xScale(xt);
-    svg.appendChild(svgEl('line', { x1: px, y1: marginT, x2: px, y2: marginT + plotH, stroke: 'var(--grid)', 'stroke-width': 0.75, opacity: 0.85 }));
+    svg.appendChild(svgEl('line', { x1: px, y1: marginT, x2: px, y2: marginT + plotH, stroke: 'var(--grid)', 'stroke-width': 0.75, opacity: 0.7 }));
     svg.appendChild(svgEl('text', { x: px, y: marginT + plotH + 18, 'text-anchor': 'middle', 'font-size': 12, fill: 'var(--text-secondary)' }, fmtNum(xt, 2)));
   }
   for (const yt of yTicks) {
     const py = yScale(yt);
-    svg.appendChild(svgEl('line', { x1: marginL, y1: py, x2: marginL + plotW, y2: py, stroke: 'var(--grid)', 'stroke-width': 0.75, opacity: 0.85 }));
+    svg.appendChild(svgEl('line', { x1: marginL, y1: py, x2: marginL + plotW, y2: py, stroke: 'var(--grid)', 'stroke-width': 0.75, opacity: 0.7 }));
     svg.appendChild(svgEl('text', { x: marginL - 10, y: py + 4, 'text-anchor': 'end', 'font-size': 12, fill: 'var(--text-secondary)' }, fmtNum(yt, 0)));
   }
   svg.appendChild(svgEl('rect', { x: marginL, y: marginT, width: plotW, height: plotH, fill: 'none', stroke: 'var(--border)' }));
@@ -5862,7 +5881,7 @@ function onGraphTypeChanged() {
 function populateGraphOverlayList() {
   const list = document.getElementById('graphOverlayList');
   if (!STATE.compareData.length) {
-    list.innerHTML = '<div class="extra-label" style="margin:0;">No saved snapshots yet (Compare Cycles tab).</div>';
+    list.innerHTML = '<div class="extra-label" style="margin:0;">No saved snapshots yet (Comparison tab).</div>';
     return;
   }
   list.innerHTML = STATE.compareData.map((c, i) => {
@@ -8136,7 +8155,7 @@ function renderEesCode() {
   out.classList.add(`ees-ff-${fontFamily}`);
   const theme = document.getElementById('eesTheme').value;
   const wrap = document.querySelector('.ees-code-wrap');
-  ['synthwave', 'solarized', 'monokai', 'dracula', 'tokyonight', 'nord', 'gruvbox', 'onedark', 'cobalt2', 'contrast'].forEach(c => { out.classList.remove(`ees-theme-${c}`); if (wrap) wrap.classList.remove(`ees-theme-${c}`); });
+  ['contrast', 'emerald', 'amber', 'violet', 'crimson', 'arctic', 'graphitegold', 'paperink', 'blueprint', 'manuscript'].forEach(c => { out.classList.remove(`ees-theme-${c}`); if (wrap) wrap.classList.remove(`ees-theme-${c}`); });
   out.classList.add(`ees-theme-${theme}`);
   if (wrap) wrap.classList.add(`ees-theme-${theme}`);
   const wrapMode = document.getElementById('eesWrapMode').value;
@@ -8321,20 +8340,20 @@ function reportResultsLeadIn(r) {
   return `<p>The table below summarizes the key performance quantities computed for the ${escapeHtml(r.name || STATE.cycleName)} under its current operating parameters. ${r.isCOP ? 'Because this is a refrigeration or heat-pump cycle, its performance is expressed as a coefficient of performance (COP) rather than a thermal efficiency.' : 'Thermal efficiency here is defined as the ratio of net work output to heat input, ' + '\u03b7 = w' + '<sub>net</sub>' + ' / q' + '<sub>in</sub>' + '.'}</p>`;
 }
 function reportComparisonTable() {
-  if (!STATE.compareData.length) return `<p class="rpt-empty">No cycles have been saved to Compare Cycles yet. Add snapshots there to include a comparison here.</p>`;
+  if (!STATE.compareData.length) return `<p class="rpt-empty">No cycles have been saved to Comparison yet. Add snapshots there to include a comparison here.</p>`;
   const sorted = STATE.compareData.slice().sort((a, b) => b.eff - a.eff);
   const rows = sorted.map((c, i) => `<tr><td>${i + 1}</td><td>${escapeHtml(c.name)}</td><td>${c.isCOP ? fmtNum(c.eff, 2) : fmtPct(c.eff)}</td></tr>`).join('');
   return `<table><thead><tr><th>Rank</th><th>Cycle</th><th>Efficiency / COP</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 function reportComparisonLeadIn(r) {
-  if (!STATE.compareData.length) return '<p>No other cycles have been saved for comparison in this session yet. Adding snapshots on the Compare Cycles tab will populate a ranked comparison table here.</p>';
+  if (!STATE.compareData.length) return '<p>No other cycles have been saved for comparison in this session yet. Adding snapshots on the Comparison tab will populate a ranked comparison table here.</p>';
   const sorted = STATE.compareData.slice().sort((a, b) => b.eff - a.eff);
   const idx = sorted.findIndex(c => c.name === (r.name || STATE.cycleName));
   const rankNote = idx >= 0 ? ` Among the ${sorted.length} saved cycle${sorted.length === 1 ? '' : 's'}, the analyzed cycle currently ranks ${idx + 1} of ${sorted.length}.` : '';
-  return `<p>The table below ranks every cycle currently saved in the Compare Cycles tab by its computed efficiency or COP, allowing a direct comparison of standing across different cycle families.${rankNote}</p>`;
+  return `<p>The table below ranks every cycle currently saved in the Comparison tab by its computed efficiency or COP, allowing a direct comparison of standing across different cycle families.${rankNote}</p>`;
 }
 function reportRoadmapItems(r) {
-  const items = ['Explore other cycles on the Compare Cycles tab to see how this one ranks.', 'Run a Parametric Study sweep to identify which parameter has the largest effect on performance.', "Visit the Live Simulation tab to see the cycle's flow schematic in motion."];
+  const items = ['Explore other cycles on the Comparison tab to see how this one ranks.', 'Run a Parametric Study sweep to identify which parameter has the largest effect on performance.', "Visit the Simulation tab to see the cycle's flow schematic in motion."];
   if (!r.isCOP && r.eff < 0.5) items.push('Consider parameter combinations that raise the maximum cycle temperature or pressure ratio, common ways to raise efficiency in this cycle family.');
   return items;
 }
