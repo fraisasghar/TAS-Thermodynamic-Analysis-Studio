@@ -32,15 +32,18 @@
   --refrig: #0f8f88;
   --shadow: 0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.06);
   --shadow-lift: 0 16px 34px rgba(15,23,42,0.14), 0 4px 12px rgba(15,23,42,0.08);
-  --shadow-glow: 0 0 0 3px rgba(31,111,224,0.14), 0 10px 24px rgba(31,111,224,0.18);
+  --shadow-glow: 0 0 0 3px color-mix(in srgb, var(--blue) 14%, transparent), 0 10px 24px color-mix(in srgb, var(--blue) 18%, transparent);
   --radius: 12px;
   --ease: cubic-bezier(.22,.8,.34,1);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", "Helvetica Neue", "Inter", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   --font-tabular: "tnum" 1, "cv02" 1, "cv03" 1, "cv04" 1;
   --brand-grad: linear-gradient(135deg, #1f6fe0, #0f8f88 55%, #d9720f);
   --page-grad: radial-gradient(1100px 600px at 12% -10%, rgba(31,111,224,0.07), transparent 60%),
                radial-gradient(900px 500px at 100% 0%, rgba(217,114,15,0.06), transparent 55%),
-               radial-gradient(1000px 700px at 50% 120%, rgba(15,143,136,0.05), transparent 60%);
+               radial-gradient(1000px 700px at 50% 120%, rgba(15,143,136,0.05), transparent 60%),
+               repeating-linear-gradient(0deg, rgba(16,24,40,0.028) 0 1px, transparent 1px 32px),
+               repeating-linear-gradient(90deg, rgba(16,24,40,0.028) 0 1px, transparent 1px 32px);
 }
 [data-theme="dark"] {
   --bg: #080c15;
@@ -51,7 +54,7 @@
   --navy2: #111827;
   --accent: #f0a441;
   --blue: #559bf2;
-  --green: #34d399;
+  --green: #157a3f;
   --red: #f16a63;
   --warn: #f0b429;
   --warn-bg: #332811;
@@ -67,11 +70,13 @@
   --refrig: #3bc0b8;
   --shadow: 0 2px 12px rgba(0,0,0,0.45);
   --shadow-lift: 0 22px 46px rgba(0,0,0,0.55), 0 6px 18px rgba(0,0,0,0.45);
-  --shadow-glow: 0 0 0 3px rgba(85,155,242,0.25), 0 12px 30px rgba(85,155,242,0.3);
+  --shadow-glow: 0 0 0 3px color-mix(in srgb, var(--blue) 25%, transparent), 0 12px 30px color-mix(in srgb, var(--blue) 30%, transparent);
   --brand-grad: linear-gradient(135deg, #559bf2, #3bc0b8 55%, #f0a441);
-  --page-grad: radial-gradient(1200px 650px at 10% -12%, rgba(85,155,242,0.14), transparent 60%),
+  --page-grad: radial-gradient(1200px 650px at 10% -12%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 60%),
                radial-gradient(950px 550px at 102% 2%, rgba(240,164,65,0.10), transparent 55%),
-               radial-gradient(800px 500px at 50% 115%, rgba(59,192,184,0.08), transparent 60%);
+               radial-gradient(800px 500px at 50% 115%, rgba(59,192,184,0.08), transparent 60%),
+               repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 32px),
+               repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 32px);
 }
 [data-theme="dark"] .panel {
   background: linear-gradient(165deg, #182034 0%, #12172400 100%), linear-gradient(165deg, #182034 0%, #121724 100%);
@@ -80,19 +85,19 @@
 [data-theme="dark"] .panel:hover { border-color: #3d4d6c; }
 
 /* ---------- Accent color schemes ---------- */
-[data-accent="teal"] { --blue: #0e9488; --card-blue: #e2f6f3; --card-blue-accent: #0a7268; --brand-grad: linear-gradient(135deg, #0e9488, #1f6fe0 55%, #d9720f); }
-[data-theme="dark"][data-accent="teal"] { --blue: #38c9ba; --card-blue: #123330; --card-blue-accent: #6de0d2; --brand-grad: linear-gradient(135deg, #38c9ba, #559bf2 55%, #f0a441); }
-[data-accent="emerald"] { --blue: #12875a; --card-blue: #e3f5ec; --card-blue-accent: #0d6b46; --brand-grad: linear-gradient(135deg, #12875a, #0e9488 55%, #d9720f); }
-[data-theme="dark"][data-accent="emerald"] { --blue: #3ecf8e; --card-blue: #123326; --card-blue-accent: #7ee6b5; --brand-grad: linear-gradient(135deg, #3ecf8e, #38c9ba 55%, #f0a441); }
-[data-accent="amber"] { --blue: #b3720f; --card-blue: #faf0dd; --card-blue-accent: #8f5a0a; --brand-grad: linear-gradient(135deg, #b3720f, #d9720f 55%, #1f6fe0); }
-[data-theme="dark"][data-accent="amber"] { --blue: #f0b94a; --card-blue: #332510; --card-blue-accent: #f7d38a; --brand-grad: linear-gradient(135deg, #f0b94a, #f0a441 55%, #559bf2); }
-[data-accent="crimson"] { --blue: #b8362f; --card-blue: #fbe8e6; --card-blue-accent: #8f2a2a; --brand-grad: linear-gradient(135deg, #b8362f, #d9720f 55%, #1f6fe0); }
-[data-theme="dark"][data-accent="crimson"] { --blue: #e8746a; --card-blue: #3a1c19; --card-blue-accent: #f2a99e; --brand-grad: linear-gradient(135deg, #e8746a, #f0a441 55%, #559bf2); }
-[data-accent="slate"] { --blue: #3f5872; --card-blue: #e9eef2; --card-blue-accent: #2c3f52; --brand-grad: linear-gradient(135deg, #3f5872, #0e9488 55%, #d9720f); }
-[data-theme="dark"][data-accent="slate"] { --blue: #8fa8bf; --card-blue: #1c2733; --card-blue-accent: #b7cbdb; --brand-grad: linear-gradient(135deg, #8fa8bf, #559bf2 55%, #f0a441); }
-[data-accent="violet"] { --blue: #7c3aed; --card-blue: #f1e9fd; --card-blue-accent: #5b21b6; --brand-grad: linear-gradient(135deg, #7c3aed, #1f6fe0 55%, #d9720f); }
-[data-theme="dark"][data-accent="violet"] { --blue: #a78bfa; --card-blue: #2a2140; --card-blue-accent: #c4b5fd; --brand-grad: linear-gradient(135deg, #a78bfa, #559bf2 55%, #f0a441); }
-.accent-swatch { width: 13px; height: 13px; border-radius: 50%; background: var(--blue); flex: none; border: 1.5px solid rgba(255,255,255,0.4); }
+[data-accent="teal"] { --blue: #0e9488; --accent: #0e9488; --card-blue: #e2f6f3; --card-blue-accent: #0a7268; --brand-grad: linear-gradient(135deg, #0e9488, #1f6fe0 55%, #d9720f); }
+[data-theme="dark"][data-accent="teal"] { --blue: #14b8b0; --accent: #14b8b0; --card-blue: #123330; --card-blue-accent: #6de0d2; --brand-grad: linear-gradient(135deg, #14b8b0, #559bf2 55%, #f0a441); }
+[data-accent="emerald"] { --blue: #12875a; --accent: #12875a; --card-blue: #e3f5ec; --card-blue-accent: #0d6b46; --brand-grad: linear-gradient(135deg, #12875a, #0e9488 55%, #d9720f); }
+[data-theme="dark"][data-accent="emerald"] { --blue: #22c55e; --accent: #22c55e; --card-blue: #123326; --card-blue-accent: #7ee6b5; --brand-grad: linear-gradient(135deg, #22c55e, #14b8b0 55%, #f0a441); }
+[data-accent="amber"] { --blue: #b3720f; --accent: #b3720f; --card-blue: #faf0dd; --card-blue-accent: #8f5a0a; --brand-grad: linear-gradient(135deg, #b3720f, #d9720f 55%, #1f6fe0); }
+[data-theme="dark"][data-accent="amber"] { --blue: #f2a30f; --accent: #f2a30f; --card-blue: #332510; --card-blue-accent: #f7d38a; --brand-grad: linear-gradient(135deg, #f2a30f, #f0a441 55%, #559bf2); }
+[data-accent="crimson"] { --blue: #b8362f; --accent: #b8362f; --card-blue: #fbe8e6; --card-blue-accent: #8f2a2a; --brand-grad: linear-gradient(135deg, #b8362f, #d9720f 55%, #1f6fe0); }
+[data-theme="dark"][data-accent="crimson"] { --blue: #f0454f; --accent: #f0454f; --card-blue: #3a1c19; --card-blue-accent: #f2a99e; --brand-grad: linear-gradient(135deg, #f0454f, #f0a441 55%, #559bf2); }
+[data-accent="slate"] { --blue: #3f5872; --accent: #3f5872; --card-blue: #e9eef2; --card-blue-accent: #2c3f52; --brand-grad: linear-gradient(135deg, #3f5872, #0e9488 55%, #d9720f); }
+[data-theme="dark"][data-accent="slate"] { --blue: #64748b; --accent: #64748b; --card-blue: #1c2733; --card-blue-accent: #b7cbdb; --brand-grad: linear-gradient(135deg, #64748b, #559bf2 55%, #f0a441); }
+[data-accent="violet"] { --blue: #7c3aed; --accent: #7c3aed; --card-blue: #f1e9fd; --card-blue-accent: #5b21b6; --brand-grad: linear-gradient(135deg, #7c3aed, #1f6fe0 55%, #d9720f); }
+[data-theme="dark"][data-accent="violet"] { --blue: #8b5cf6; --accent: #8b5cf6; --card-blue: #2a2140; --card-blue-accent: #c4b5fd; --brand-grad: linear-gradient(135deg, #8b5cf6, #559bf2 55%, #f0a441); }
+.accent-swatch { width: 22px; height: 22px; border-radius: 50%; background: var(--blue); flex: none; }
 
 /* ---------- Focus-visible accessibility ring (keyboard nav) ---------- */
 :focus-visible { outline: 2.5px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
@@ -138,6 +143,10 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 }
 .brand:hover .brand-mark { transform: scale(1.1); box-shadow: 0 5px 16px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(0,0,0,0.04); }
 .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.brand-word {
+  font-weight: 800; font-size: 15.5px; letter-spacing: -0.3px; margin-left: 9px;
+  background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 
 /* ---------- Toolbar (flat, professional, Office-ribbon style) ---------- */
 .toolbar {
@@ -160,9 +169,9 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 .tb-spacer { flex: 1; }
 /* ---------- Report tab ---------- */
 .report-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 14px; height: 100%; min-height: 0; }
-.report-sidebar { padding: 14px; display: flex; flex-direction: column; gap: 9px; overflow-y: auto; min-height: 0; }
+.report-sidebar { padding: 14px; display: flex; flex-direction: column; gap: 9px; overflow-y: auto; overflow-x: visible; min-height: 0; }
 .report-sidebar select, .report-sidebar input[type=text], .report-sidebar input[type=date] { width: 100%; }
-.report-section-list { display: flex; flex-wrap: wrap; gap: 6px; max-height: 260px; overflow-y: auto; padding: 2px 2px 2px 0; align-content: flex-start; }
+.report-section-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 2px 2px 0; align-content: flex-start; }
 .rpt-sec-chip {
   display: flex; align-items: center; gap: 5px; padding: 5px 10px 5px 8px; border: 1px solid var(--border); border-radius: 999px;
   background: var(--card-gray); font-size: 11px; color: var(--text-secondary); cursor: pointer; user-select: none;
@@ -274,33 +283,29 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 .ees-code .ees-directive { color: #4fc1ff; font-weight: 700; }
 .ees-code .ees-blank { display: block; height: 1.65em; }
 .ees-code.ees-tight { line-height: 1.25; }
-.ees-code.ees-ff-classic { font-family: 'Consolas', 'Menlo', 'Courier New', monospace; }
-.ees-code.ees-ff-typewriter { font-family: 'Courier New', Courier, monospace; }
-.ees-code.ees-ff-cascadia { font-family: 'Cascadia Code', 'Consolas', monospace; }
-.ees-code.ees-ff-fira { font-family: 'Fira Code', 'Consolas', monospace; }
-.ees-code.ees-ff-source { font-family: 'Source Code Pro', 'Menlo', 'Consolas', monospace; }
-.ees-code.ees-ff-jetbrains { font-family: 'JetBrains Mono', 'Consolas', monospace; }
-.ees-code.ees-ff-plex { font-family: 'IBM Plex Mono', 'Consolas', monospace; }
-.ees-code.ees-ff-roboto { font-family: 'Roboto Mono', 'Consolas', monospace; }
-.ees-code.ees-ff-ubuntu { font-family: 'Ubuntu Mono', 'Consolas', monospace; }
-.ees-code.ees-ff-lucida { font-family: 'Lucida Console', Monaco, monospace; }
+.ees-code.ees-ff-classic { font-family: 'Consolas', 'Menlo', 'Courier New', monospace; letter-spacing: 0; line-height: 1.55; font-weight: 400; }
+.ees-code.ees-ff-typewriter { font-family: 'Courier New', Courier, monospace; letter-spacing: 0.2px; line-height: 1.6; font-weight: 400; }
+.ees-code.ees-ff-cascadia { font-family: 'Cascadia Code', 'Cascadia Mono', 'Consolas', monospace; letter-spacing: 0.15px; line-height: 1.65; font-weight: 400; }
+.ees-code.ees-ff-fira { font-family: 'Fira Code', 'Fira Mono', 'Consolas', monospace; letter-spacing: 0.4px; line-height: 1.7; font-weight: 400; }
+.ees-code.ees-ff-source { font-family: 'Source Code Pro', 'Menlo', 'Consolas', monospace; letter-spacing: -0.1px; line-height: 1.5; font-weight: 300; }
+.ees-code.ees-ff-jetbrains { font-family: 'JetBrains Mono', 'Consolas', monospace; letter-spacing: -0.2px; line-height: 1.75; font-weight: 500; }
+.ees-code.ees-ff-plex { font-family: 'IBM Plex Mono', 'Consolas', monospace; letter-spacing: 0; line-height: 1.6; font-weight: 400; font-stretch: 92%; }
+.ees-code.ees-ff-roboto { font-family: 'Roboto Mono', 'Consolas', monospace; letter-spacing: 0.1px; line-height: 1.55; font-weight: 400; }
+.ees-code.ees-ff-ubuntu { font-family: 'Ubuntu Mono', 'Consolas', monospace; letter-spacing: 0.3px; line-height: 1.55; font-weight: 700; }
+.ees-code.ees-ff-lucida { font-family: 'Lucida Console', Monaco, monospace; letter-spacing: 0.5px; line-height: 1.65; font-weight: 400; font-size: 0.92em; }
 .ees-code.ees-nowrap { white-space: pre; word-break: normal; }
-.ees-code-wrap.ees-theme-dark { background: #1e1e1e; }
-.ees-code.ees-theme-dark { color: #d4d4d4; }
-.ees-code.ees-theme-dark .ees-comment { color: #6a9955; }
-.ees-code.ees-theme-dark .ees-directive { color: #4fc1ff; }
-.ees-code-wrap.ees-theme-light { background: #fafafa; }
-.ees-code.ees-theme-light { color: #24292e; }
-.ees-code.ees-theme-light .ees-comment { color: #2a7a2a; }
-.ees-code.ees-theme-light .ees-directive { color: #0969da; }
+.ees-code-wrap.ees-theme-synthwave { background: #2a2139; }
+.ees-code.ees-theme-synthwave { color: #ffffff; }
+.ees-code.ees-theme-synthwave .ees-comment { color: #848bbd; font-style: italic; }
+.ees-code.ees-theme-synthwave .ees-directive { color: #36f9f6; }
 .ees-code-wrap.ees-theme-solarized { background: #002b36; }
 .ees-code.ees-theme-solarized { color: #93a1a1; }
 .ees-code.ees-theme-solarized .ees-comment { color: #586e75; }
 .ees-code.ees-theme-solarized .ees-directive { color: #268bd2; }
-.ees-code-wrap.ees-theme-solarizedlight { background: #fdf6e3; }
-.ees-code.ees-theme-solarizedlight { color: #657b83; }
-.ees-code.ees-theme-solarizedlight .ees-comment { color: #93a1a1; }
-.ees-code.ees-theme-solarizedlight .ees-directive { color: #268bd2; }
+.ees-code-wrap.ees-theme-tokyonight { background: #1a1b26; }
+.ees-code.ees-theme-tokyonight { color: #a9b1d6; }
+.ees-code.ees-theme-tokyonight .ees-comment { color: #565f89; }
+.ees-code.ees-theme-tokyonight .ees-directive { color: #bb9af7; }
 .ees-code-wrap.ees-theme-monokai { background: #272822; }
 .ees-code.ees-theme-monokai { color: #f8f8f2; }
 .ees-code.ees-theme-monokai .ees-comment { color: #75715e; }
@@ -313,23 +318,34 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 .ees-code.ees-theme-nord { color: #d8dee9; }
 .ees-code.ees-theme-nord .ees-comment { color: #616e88; }
 .ees-code.ees-theme-nord .ees-directive { color: #88c0d0; }
-.ees-code-wrap.ees-theme-githublight { background: #ffffff; }
-.ees-code.ees-theme-githublight { color: #24292f; }
-.ees-code.ees-theme-githublight .ees-comment { color: #6e7781; }
-.ees-code.ees-theme-githublight .ees-directive { color: #0550ae; }
+.ees-code-wrap.ees-theme-gruvbox { background: #282828; }
+.ees-code.ees-theme-gruvbox { color: #ebdbb2; }
+.ees-code.ees-theme-gruvbox .ees-comment { color: #928374; font-style: italic; }
+.ees-code.ees-theme-gruvbox .ees-directive { color: #fe8019; }
 .ees-code-wrap.ees-theme-onedark { background: #282c34; }
 .ees-code.ees-theme-onedark { color: #abb2bf; }
 .ees-code.ees-theme-onedark .ees-comment { color: #5c6370; }
 .ees-code.ees-theme-onedark .ees-directive { color: #61afef; }
+.ees-code-wrap.ees-theme-cobalt2 { background: #193549; }
+.ees-code.ees-theme-cobalt2 { color: #ffffff; }
+.ees-code.ees-theme-cobalt2 .ees-comment { color: #7c8fa4; font-style: italic; }
+.ees-code.ees-theme-cobalt2 .ees-directive { color: #ffc600; }
 .ees-code-wrap.ees-theme-contrast { background: #000000; }
 .ees-code.ees-theme-contrast { color: #ffffff; }
 .ees-code.ees-theme-contrast .ees-comment { color: #ffff00; }
 .ees-code.ees-theme-contrast .ees-directive { color: #00ffff; }
-.ees-code .ees-lnrow { display: flex; }
-.ees-code .ees-lnnum { flex: none; width: 34px; text-align: right; margin-right: 14px; opacity: 0.4; user-select: none; visibility: hidden; }
+.ees-code .ees-lnrow { display: flex; border-radius: 3px; transition: background 0.1s ease; }
+.ees-code .ees-lnrow:hover { background: color-mix(in srgb, var(--blue) 10%, transparent); }
+.ees-code .ees-lnnum {
+  flex: none; width: 38px; text-align: right; margin-right: 14px; padding-right: 10px;
+  font-variant-numeric: tabular-nums; color: color-mix(in srgb, var(--blue) 65%, var(--text-secondary));
+  border-right: 1px solid color-mix(in srgb, var(--blue) 25%, transparent);
+  opacity: 0.85; user-select: none; visibility: hidden;
+}
 .ees-code.ees-shownum .ees-lnnum { visibility: visible; }
-.ees-code.ees-zebra .ees-lnrow:nth-child(even) { background: rgba(127, 127, 127, 0.09); }
-.ees-process-summary { display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; color: var(--text); max-height: 130px; overflow-y: auto; }
+.ees-code.ees-zebra .ees-lnrow:nth-child(even) { background: color-mix(in srgb, var(--blue) 7%, transparent); }
+.ees-code.ees-zebra .ees-lnrow:hover { background: color-mix(in srgb, var(--blue) 16%, transparent); }
+.ees-process-summary { display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; color: var(--text); }
 .ees-process-summary .ees-proc-row { display: flex; justify-content: space-between; gap: 8px; padding: 4px 7px; border: 1px solid var(--border); border-radius: 4px; background: var(--card-gray); }
 .ees-process-summary .ees-proc-row span:last-child { font-weight: 700; color: var(--blue); }
 .lb-overlay-list { display: flex; flex-direction: column; gap: 4px; max-height: 150px; overflow-y: auto; }
@@ -357,18 +373,34 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 }
 .theme-switch:hover { border-color: rgba(255,255,255,0.28); }
 [data-theme="light"] .theme-switch { background: linear-gradient(135deg, #eef2fb, #dbe4f5); border-color: rgba(20,30,50,0.14); }
-.theme-switch-icon { flex: 1; display: flex; align-items: center; justify-content: center; z-index: 1; pointer-events: none; color: rgba(255,255,255,0.55); }
-.theme-switch-icon svg { width: 12px; height: 12px; }
-.theme-switch-sun { color: rgba(255,255,255,0.35); }
-[data-theme="light"] .theme-switch-sun { color: #f2a30f; }
-.theme-switch-moon { color: rgba(255,255,255,0.9); }
-[data-theme="light"] .theme-switch-moon { color: rgba(20,30,50,0.35); }
+/* Fixed, always-present, dim decorative icons -- these never light up
+   themselves; only the icon riding on the knob (below) shows as "active",
+   which is what actually communicates the current mode unambiguously. */
+.theme-switch-icon { flex: 1; display: flex; align-items: center; justify-content: center; z-index: 1; pointer-events: none; }
+.theme-switch-icon svg { width: 11px; height: 11px; }
+.theme-switch-sun { color: rgba(255,255,255,0.3); }
+[data-theme="light"] .theme-switch-sun { color: rgba(20,30,50,0.25); }
+.theme-switch-moon { color: rgba(255,255,255,0.3); }
+[data-theme="light"] .theme-switch-moon { color: rgba(20,30,50,0.25); }
 .theme-switch-knob {
   position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; z-index: 2;
-  background: radial-gradient(circle at 35% 30%, #4a5a7a, #1b2334 70%); box-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
-  transition: transform 0.28s cubic-bezier(.4,0,.2,1), background 0.28s ease;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 35% 30%, #b9c6e6, #6b7ba8 75%); box-shadow: 0 2px 6px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.15);
+  transform: translateX(28px);
+  transition: transform 0.22s cubic-bezier(.4,0,.2,1), background 0.22s ease, box-shadow 0.22s ease;
 }
-[data-theme="light"] .theme-switch-knob { transform: translateX(28px); background: radial-gradient(circle at 35% 30%, #fff6d8, #f2a30f 75%); box-shadow: 0 2px 8px rgba(242,163,15,0.5), 0 0 0 1px rgba(255,255,255,0.6); }
+[data-theme="light"] .theme-switch-knob {
+  transform: translateX(0);
+  background: radial-gradient(circle at 35% 30%, #ffe28a, #f2a30f 75%);
+  box-shadow: 0 2px 10px rgba(242,163,15,0.65), 0 0 0 1px rgba(255,255,255,0.7);
+}
+/* Only the icon matching the current theme is shown, and only on the knob
+   itself -- this is the one visual source of truth for which mode is
+   active, so there's no ambiguity about "which side is which". */
+.theme-switch-knob-icon { position: absolute; width: 13px; height: 13px; color: #2a2410; opacity: 0; transition: opacity 0.15s ease; }
+.theme-switch-knob-moon { color: #eef2fb; opacity: 1; }
+[data-theme="light"] .theme-switch-knob-sun { opacity: 1; }
+[data-theme="light"] .theme-switch-knob-moon { opacity: 0; }
 .accent-picker-wrap { position: relative; }
 .accent-picker-pop {
   display: none; position: absolute; top: calc(100% + 10px); right: 0; z-index: 50;
@@ -431,12 +463,12 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
 /* ---------- Generic panel/card ---------- */
 .panel {
   background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.03);
   transition: box-shadow 0.28s var(--ease), transform 0.28s var(--ease), border-color 0.28s var(--ease);
 }
 .panel:hover, .diagram-panel:hover, .setup-left:hover, .theory-card:hover,
 .state-table-wrap:hover, .table-panel:hover, .power-row:hover, .graph-ctrl:hover {
-  border-color: var(--blue);
+  border-color: var(--blue); box-shadow: var(--shadow-lift), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 .badge {
   display: block; text-align: center; color: #fff; font-weight: 700; font-size: 12.5px;
@@ -505,8 +537,8 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; ove
   border-top: 1px solid var(--border);
 }
 .action-bar .action-btn { margin-bottom: 0; width: auto; flex: 1 1 0; white-space: nowrap; font-size: 11.5px; padding: 7px 8px; }
-.action-bar .action-btn-primary { flex: 1.5 1 0; font-size: 12px; box-shadow: 0 4px 10px rgba(31,111,224,0.28); }
-.action-bar .action-btn-primary:hover { box-shadow: 0 7px 16px rgba(31,111,224,0.36); }
+.action-bar .action-btn-primary { flex: 1.5 1 0; font-size: 12px; box-shadow: 0 4px 10px color-mix(in srgb, var(--blue) 28%, transparent); }
+.action-bar .action-btn-primary:hover { box-shadow: 0 7px 16px color-mix(in srgb, var(--blue) 36%, transparent); }
 .action-divider { width: 1px; align-self: stretch; margin: 2px 1px; flex: none; background: var(--border); }
 .combo-wrap { position: relative; }
 .combo-wrap input { padding-right: 40px; cursor: pointer; }
@@ -569,7 +601,7 @@ input[type=color]::-moz-color-swatch { border: none; border-radius: 4px; }
    their text to clip). */
 .ctrl-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .ctrl-row > label { flex: none; font-size: 11.5px; color: var(--text-secondary); white-space: nowrap; margin: 0; }
-.ctrl-row > select, .ctrl-row > input, .ctrl-row > .date-combo-wrap { flex: 1 1 auto; min-width: 0; width: auto; }
+.ctrl-row > select, .ctrl-row > input, .ctrl-row > .date-picker-wrap { flex: 1 1 auto; min-width: 0; width: auto; }
 .date-combo-wrap { display: flex; }
 .date-combo-wrap input[type=date] { flex: 1 1 auto; min-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: none; }
 .date-combo-wrap input[type=date]::-webkit-calendar-picker-indicator { display: none; }
@@ -582,6 +614,46 @@ input[type=color]::-moz-color-swatch { border: none; border-radius: 4px; }
 .date-combo-wrap .date-icon-btn svg { width: 15px; height: 15px; }
 .search-row { display: flex; gap: 4px; }
 .search-row input { flex: 1; }
+
+/* ---------- Custom themed date picker (replaces the native OS calendar,
+   which always renders white/light and ignores the site's dark theme). ---------- */
+.date-picker-wrap { position: relative; flex: 1 1 auto; min-width: 0; }
+.date-picker-pop {
+  display: none; position: fixed; top: 0; left: 0; z-index: 200;
+  width: min(280px, 92vw); padding: 12px; border-radius: 14px;
+  background: linear-gradient(165deg, var(--navy2) 0%, var(--navy) 100%);
+  border: 1px solid var(--border); box-shadow: 0 20px 46px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+.date-picker-pop.open { display: block; animation: dpPopIn 0.16s cubic-bezier(.2,.8,.3,1); }
+@keyframes dpPopIn { from { opacity: 0; transform: translateY(-6px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.dp-header { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 10px; }
+.dp-quickjump { display: flex; gap: 6px; flex: 1; margin: 0 8px; }
+.dp-quickjump select { flex: 1; min-width: 0; font-size: 12px; padding: 5px 4px; }
+.dp-nav-btn {
+  width: 24px; height: 24px; border-radius: 7px; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--card-gray); color: var(--text-secondary);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+.dp-nav-btn:hover { background: var(--blue); color: #fff; }
+.dp-nav-btn:active { transform: scale(0.92); }
+.dp-nav-btn svg { width: 13px; height: 13px; }
+.dp-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: 4px; }
+.dp-weekdays span { text-align: center; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-secondary); padding: 4px 0; }
+.dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.dp-day {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; border-radius: 8px; border: none; cursor: pointer; background: transparent; color: var(--text);
+  transition: background 0.12s ease, color 0.12s ease, transform 0.1s ease;
+}
+.dp-day:hover { background: color-mix(in srgb, var(--blue) 22%, transparent); }
+.dp-day:active { transform: scale(0.9); }
+.dp-day.other-month { color: var(--text-secondary); opacity: 0.45; }
+.dp-day.today { box-shadow: inset 0 0 0 1.5px var(--blue); font-weight: 700; }
+.dp-day.selected { background: linear-gradient(135deg, var(--blue), color-mix(in srgb, var(--blue) 60%, #000)); color: #fff; font-weight: 700; box-shadow: 0 3px 10px color-mix(in srgb, var(--blue) 45%, transparent); }
+.dp-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--border); }
+.dp-link { background: none; border: none; cursor: pointer; font-size: 11.5px; font-weight: 700; color: var(--blue); padding: 2px 4px; }
+.dp-link:hover { text-decoration: underline; }
 .search-row button { flex: none; }
 .hint-text { font-size: 10.5px; color: var(--text-secondary); margin-top: 3px; min-height: 14px; }
 
@@ -638,16 +710,11 @@ button.action-btn {
 button.action-btn:hover { filter: brightness(1.04); }
 button.action-btn:active { transform: translateY(0) scale(0.97); transition: transform 0.08s ease; }
 .tb-btn:active, .theme-toggle:active, .icon-btn:active { transform: scale(0.94); transition: transform 0.08s ease; }
-.btn-blue:hover { box-shadow: 0 10px 22px rgba(31,111,196,0.35); }
+.btn-blue:hover { box-shadow: 0 10px 22px color-mix(in srgb, var(--blue) 35%, transparent); }
 .btn-green:hover { box-shadow: 0 10px 22px rgba(31,157,85,0.32); }
 .btn-neutral:hover { box-shadow: 0 8px 18px rgba(20,30,50,0.16); }
 .btn-danger:hover { box-shadow: 0 8px 18px rgba(208,57,46,0.22); }
-.btn-glow-fx {
-  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.28), transparent 55%);
-  opacity: 0; transition: opacity 0.25s ease;
-}
-button.action-btn:hover .btn-glow-fx { opacity: 1; }
+.btn-glow-fx { display: none; }
 
 .eff-label { font-weight: 700; font-size: 12px; margin: 6px 0 5px; white-space: nowrap; }
 .gauge-track {
@@ -686,7 +753,7 @@ svg.diagram { display: block; width: 100%; height: 100%; min-height: 0; }
   border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
   box-shadow: var(--shadow-lift); transition: border-color 0.25s var(--ease);
 }
-.ts-badge-eff { font-size: 21px; font-weight: 800; color: var(--accent); line-height: 1.15; letter-spacing: -0.2px; }
+.ts-badge-eff { font-family: var(--font-mono); font-size: 21px; font-weight: 700; color: var(--accent); line-height: 1.15; letter-spacing: -0.3px; }
 .ts-badge.infeasible .ts-badge-eff { color: var(--red); }
 .ts-badge-carnot { font-size: 10.5px; color: var(--text-secondary); margin-top: 3px; }
 .ts-badge .feasibility-warning { margin: 8px 0 0; max-width: 204px; padding: 7px 9px; font-size: 10.5px; }
@@ -718,10 +785,10 @@ svg.diagram { display: block; width: 100%; height: 100%; min-height: 0; }
   border-left: 3px solid var(--sc, var(--blue));
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.sim-stat-card:hover { box-shadow: 0 0 0 1.5px var(--blue); }
+.sim-stat-card:hover { box-shadow: 0 0 0 1.5px var(--sc, var(--blue)); }
 .sim-stat-card-muted { grid-column: 1 / -1; border-left-color: var(--text-secondary); }
 .sim-stat-label { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-secondary); margin-bottom: 3px; }
-.sim-stat-value { font-size: 17px; font-weight: 800; color: var(--sc, var(--text)); letter-spacing: -0.2px; }
+.sim-stat-value { font-family: var(--font-mono); font-size: 17px; font-weight: 700; color: var(--sc, var(--text)); letter-spacing: -0.3px; }
 .sim-stat-value-sm { font-size: 11.5px; font-weight: 700; color: var(--text-secondary); }
 .sim-stat-card.infeasible { border-left-color: var(--warn); }
 .sim-stat-card.infeasible .sim-stat-value { color: var(--warn); font-size: 13px; }
@@ -770,7 +837,7 @@ table.data-table tbody tr:hover { background: var(--card-blue); }
   padding: 8px; border-radius: 6px; margin-bottom: 6px; font-size: 12px; border-left: 4px solid var(--blue);
   background: var(--card-blue); cursor: default; transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-#compareList li:hover { box-shadow: 0 6px 14px rgba(31,111,196,0.2); }
+#compareList li:hover { box-shadow: 0 6px 14px color-mix(in srgb, var(--blue) 20%, transparent); }
 
 /* ---------- Results table tab ---------- */
 .results-wrap { display: flex; flex-direction: column; gap: 12px; height: auto; min-height: 0; }
@@ -783,19 +850,19 @@ table.data-table tbody tr:hover { background: var(--card-blue); }
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .results-kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(20,30,50,0.12); }
-.results-kpi-card.kpi-blue { --kpi-c: #1f6fe0; }
-.results-kpi-card.kpi-green { --kpi-c: #16a34a; }
-.results-kpi-card.kpi-orange { --kpi-c: #d9720f; }
-.results-kpi-card.kpi-red { --kpi-c: #dc2626; }
-.results-kpi-card.kpi-purple { --kpi-c: #7c3aed; }
-.results-kpi-card.kpi-teal { --kpi-c: #0f8f88; }
+.results-kpi-card.kpi-blue { --kpi-c: #2f7de0; }
+.results-kpi-card.kpi-green { --kpi-c: #22c55e; }
+.results-kpi-card.kpi-orange { --kpi-c: #f2a30f; }
+.results-kpi-card.kpi-red { --kpi-c: #f0454f; }
+.results-kpi-card.kpi-purple { --kpi-c: #a855f7; }
+.results-kpi-card.kpi-teal { --kpi-c: #14b8b0; }
 .results-kpi-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-secondary); margin-bottom: 5px; font-weight: 700; }
 .results-kpi-value { font-size: 20px; font-weight: 700; color: var(--text); }
 .results-energyflow { padding: 14px 16px; }
 .energy-flow-bar { display: flex; width: 100%; height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); margin: 4px 0 10px; }
 .energy-flow-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; transition: width 0.3s ease; }
-.energy-flow-seg.seg-work { background: linear-gradient(135deg, #16a34a, #0f8f4a); }
-.energy-flow-seg.seg-reject { background: linear-gradient(135deg, #94a3b8, #64748b); }
+.energy-flow-seg.seg-work { background: linear-gradient(135deg, #22c55e, #14b8b0); }
+.energy-flow-seg.seg-reject { background: linear-gradient(135deg, #64748b, #475569); }
 .energy-flow-legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-secondary); }
 .efl-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
 .efl-dot-work { background: #16a34a; }
@@ -816,17 +883,25 @@ table.data-table.copyable tbody tr.row-copied { animation: rowCopiedFlash 0.6s e
 .benchmark-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
 .benchmark-label { width: 100px; flex: none; font-size: 12px; font-weight: 700; color: var(--text-secondary); }
 .benchmark-value { width: 80px; flex: none; text-align: right; font-size: 14px; font-weight: 800; }
-.gauge-band { position: absolute; top: 0; bottom: 0; background: rgba(217,114,15,0.32); border-left: 2px solid var(--accent); border-right: 2px solid var(--accent); border-radius: 3px; transition: left 0.4s var(--ease), width 0.4s var(--ease); }
+.gauge-band { position: absolute; top: 0; bottom: 0; background: linear-gradient(90deg, #f2a30f, #f59e0b); box-shadow: 0 0 10px rgba(242,163,15,0.6); border-left: 2px solid #fbbf24; border-right: 2px solid #fbbf24; border-radius: 3px; transition: left 0.4s var(--ease), width 0.4s var(--ease); }
 .benchmark-hero { display: flex; align-items: center; gap: 20px; padding: 4px 0 14px; flex-wrap: wrap; }
-.carnot-ring { flex: none; }
+.carnot-ring-wrap { position: relative; width: 120px; height: 120px; flex: none; }
+.carnot-ring { position: absolute; top: 0; left: 0; }
 .carnot-ring circle#carnotRingFill { transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1); }
-.carnot-ring-label { position: relative; margin-left: -96px; width: 96px; text-align: center; pointer-events: none; flex: none; }
-.carnot-ring-pct { font-size: 21px; font-weight: 800; color: var(--text); }
+.carnot-ring-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 96px; text-align: center; pointer-events: none; }
+.carnot-ring-pct { font-family: var(--font-mono); font-size: 21px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
 .carnot-ring-sub { font-size: 9.5px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.4px; }
 .benchmark-hero-stats { display: flex; flex-direction: column; gap: 10px; margin-left: 8px; }
 .benchmark-hero-stat { display: flex; align-items: baseline; gap: 8px; }
 .benchmark-hero-stat span { font-size: 11.5px; color: var(--text-secondary); width: 82px; }
-.benchmark-hero-stat b { font-size: 16px; color: var(--text); }
+.benchmark-hero-stat b { font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
+.benchmark-footer-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+.benchmark-range-chip {
+  font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; flex: none;
+  background: var(--card-blue); color: var(--card-blue-accent);
+}
+.benchmark-range-chip.chip-warn { background: #332510; color: #f7d38a; }
+[data-theme="light"] .benchmark-range-chip.chip-warn { background: #faf0dd; color: #8f5a0a; }
 .exergy-panel { flex: 0 0 auto; padding: 16px 18px; }
 .exergy-panel-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
 .exergy-panel-header h3 { font-size: 13px; }
@@ -903,6 +978,14 @@ table.data-table.copyable tbody tr.row-copied { animation: rowCopiedFlash 0.6s e
 .tools-section-header { display: flex; align-items: baseline; gap: 8px; margin: 4px 0 4px; }
 .tools-section-header h2 { margin: 0; font-size: 15px; font-weight: 800; color: var(--text); }
 .tools-section-header span { font-size: 11.5px; color: var(--text-secondary); }
+.tools-section-header.tools-header-hero { flex-direction: column; align-items: center; gap: 6px; margin: 6px 0 16px; text-align: center; }
+.tools-section-header.tools-header-hero h2 {
+  font-size: 19px; letter-spacing: 0.2px;
+  background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tools-section-header.tools-header-hero h2::after {
+  content: ''; display: block; width: 56px; height: 3px; margin: 8px auto 0; border-radius: 3px; background: var(--brand-grad);
+}
 
 /* Worksheet-style list -- each tool is a full-width row split into an
    inputs column and an answer column, divided by thin rules instead of
@@ -1049,7 +1132,7 @@ table.data-table.copyable tbody tr.row-copied { animation: rowCopiedFlash 0.6s e
 button.action-btn:hover { filter: brightness(1.08); box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
 .tab-btn:hover:not(.active) { color: var(--text); background: var(--card-gray); }
 select:hover, input[type=text]:hover, input[type=number]:hover { border-color: var(--blue); }
-select:focus, input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(31,111,196,0.18); }
+select:focus, input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 18%, transparent); }
 button:focus-visible, .tab-btn:focus-visible, .icon-btn:focus-visible {
   outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px;
 }
@@ -1090,10 +1173,13 @@ input[type=range]:active::-moz-range-thumb { cursor: grabbing; transform: scale(
 
 
 @media (max-width: 900px) {
-  .setup-grid, .compare-grid, .leaderboard-grid, .sim-body, .graphs-wrap, .param-study-wrap, .report-wrap, .ees-wrap { grid-template-columns: 1fr; }
+  .setup-grid, .compare-grid, .leaderboard-grid, .sim-body, .graphs-wrap, .param-study-wrap, .report-wrap, .ees-wrap { grid-template-columns: 1fr; height: auto; }
   .theory-grid { grid-template-columns: 1fr; }
   .theory-grid h2.theory-h, .roadmap-card { grid-column: 1; }
   .tables-row { grid-template-columns: 1fr; }
+  .setup-outer, .sim-wrap { height: auto; }
+  .diagram-panel, .graph-canvas-panel { height: 380px; min-height: 380px; flex: none; }
+  .compare-list-panel, .leaderboard-ctrl-vertical, .graph-ctrl-side, .param-ctrl-side { max-height: none; }
 }
 
 /* ---------- Phone-width fixes: bigger touch targets, no iOS input-zoom,
@@ -1113,6 +1199,7 @@ input[type=range]:active::-moz-range-thumb { cursor: grabbing; transform: scale(
   .tb-btn.icon-only svg { width: 17px; height: 17px; }
 
   .tab-btn { padding: 10px 12px; font-size: 12px; }
+  .brand-word { display: none; }
 
   .setup-left, .compare-list-panel, .table-panel, .tools-card { padding: 10px !important; }
   .tab-panel { padding: 10px; }
@@ -1152,6 +1239,7 @@ input[type=range]:active::-moz-range-thumb { cursor: grabbing; transform: scale(
   .results-kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .energy-flow-legend { flex-direction: column; gap: 6px; }
   .rpt-sec-chip { font-size: 11.5px; padding: 7px 11px 7px 9px; }
+  .diagram-panel, .graph-canvas-panel { height: 300px; min-height: 300px; }
 }
 
 @media print {
@@ -1300,8 +1388,11 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
   </div>
   <button class="theme-switch" id="btnTheme" title="Toggle Light / Dark Theme" aria-label="Toggle light/dark theme">
     <span class="theme-switch-icon theme-switch-sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.3"/><g stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="4.7"/><line x1="12" y1="19.3" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="4.7" y2="12"/><line x1="19.3" y1="12" x2="21.5" y2="12"/><line x1="5.3" y1="5.3" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="18.7" y2="18.7"/><line x1="5.3" y1="18.7" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="18.7" y2="5.3"/></g></svg></span>
-    <span class="theme-switch-knob" id="themeSwitchKnob"></span>
     <span class="theme-switch-icon theme-switch-moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></span>
+    <span class="theme-switch-knob" id="themeSwitchKnob">
+      <svg class="theme-switch-knob-icon theme-switch-knob-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4.3"/><g stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="4.7"/><line x1="12" y1="19.3" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="4.7" y2="12"/><line x1="19.3" y1="12" x2="21.5" y2="12"/><line x1="5.3" y1="5.3" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="18.7" y2="18.7"/><line x1="5.3" y1="18.7" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="18.7" y2="5.3"/></g></svg>
+      <svg class="theme-switch-knob-icon theme-switch-knob-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+    </span>
     <span id="themeLabel" class="sr-only">Light Mode</span>
   </button>
 </div>
@@ -1476,7 +1567,119 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
     </div>
   </div>
 
-  <!-- ============ TAB 3: COMPARE ============ -->
+  <!-- ============ TAB 3: RESULTS TABLE ============ -->
+  <div class="tab-panel" id="tab-results">
+    <div class="results-wrap">
+      <div class="results-header-row">
+        <div class="results-title" id="resultsCycleLabel">Results for: --</div>
+        <button class="side-btn side-btn-primary" id="btnExportCsv" type="button" title="Download performance summary, parameters, and state points as one CSV">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+          Export CSV
+        </button>
+      </div>
+
+      <div class="results-kpi-grid" id="resultsKpiGrid"></div>
+
+      <div class="panel results-energyflow" id="resultsEnergyFlow"></div>
+
+      <div class="panel power-row">
+        <label>Target Net Power Output (MW):</label>
+        <input type="number" id="targetPower" value="10" min="0.001" step="1">
+        <button class="tb-btn" id="btnCalcPower" style="background:var(--blue);color:#fff;">Calculate</button>
+        <div class="extra-label" id="powerNote" style="flex:1"></div>
+      </div>
+      <div class="tables-row">
+        <div class="panel table-panel">
+          <h3>Performance Summary <span class="table-hint">(click a row to copy)</span></h3>
+          <table class="data-table copyable"><thead><tr><th>Quantity</th><th>Value</th></tr></thead><tbody id="summaryBody"></tbody></table>
+        </div>
+        <div class="panel table-panel">
+          <h3>Full State-Point Table <span class="table-hint">(click a row to copy)</span></h3>
+          <table class="data-table copyable"><thead><tr><th>State</th><th>T (K)</th><th>T (&deg;C)</th><th>s (kJ/kg&middot;K)</th></tr></thead><tbody id="stateBody"></tbody></table>
+        </div>
+      </div>
+      <div class="panel table-panel benchmark-panel" id="benchmarkPanel">
+        <h3>Efficiency vs. Theoretical (Carnot) Limit</h3>
+        <div class="benchmark-hero">
+          <div class="carnot-ring-wrap">
+            <svg class="carnot-ring" viewBox="0 0 120 120" width="120" height="120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="var(--card-gray)" stroke-width="12"/>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="url(#carnotRingGrad)" stroke-width="12" stroke-linecap="round"
+                id="carnotRingFill" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
+              <defs><linearGradient id="carnotRingGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22d3ee"/><stop offset="55%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#f43f5e"/>
+              </linearGradient></defs>
+            </svg>
+            <div class="carnot-ring-label">
+              <div class="carnot-ring-pct" id="carnotRingPct">&hellip;</div>
+              <div class="carnot-ring-sub">of Carnot limit</div>
+            </div>
+          </div>
+          <div class="benchmark-hero-stats">
+            <div class="benchmark-hero-stat"><span>This cycle</span><b id="benchThisVal">&hellip;</b></div>
+            <div class="benchmark-hero-stat"><span>Carnot limit</span><b id="benchCarnotVal">&hellip;</b></div>
+            <div class="benchmark-hero-stat"><span>Gap to ceiling</span><b id="benchGapVal">&hellip;</b></div>
+          </div>
+        </div>
+        <div class="benchmark-row" id="benchRealRow">
+          <div class="benchmark-label">Typical real-world</div>
+          <div class="gauge-track"><div class="gauge-band" id="benchRealBand"></div></div>
+          <div class="benchmark-value" id="benchRealVal" style="font-size:11.5px;">&hellip;</div>
+        </div>
+        <div class="benchmark-footer-row">
+          <div class="extra-label" id="benchNote" style="margin:0;"></div>
+          <span class="benchmark-range-chip" id="benchRangeChip" style="display:none;"></span>
+        </div>
+      </div>
+
+      <div class="panel table-panel exergy-panel" id="exergyPanel">
+        <div class="exergy-panel-header">
+          <h3 style="margin:0;">Exergy &amp; 2nd-Law Analysis</h3>
+          <div class="exergy-t0-field">
+            <label for="exergyT0">Dead-state T<sub>0</sub>:</label>
+            <input type="number" id="exergyT0" value="298.15" step="0.5" min="0">
+            <span>K</span>
+          </div>
+        </div>
+        <div class="exergy-kpi-grid" id="exergyKpiGrid"></div>
+        <div class="exergy-process-section">
+          <div class="exergy-process-title">Entropy Change by Process <span class="table-hint">(real &Delta;s between states; near-zero means that step is internally reversible)</span></div>
+          <div id="exergyProcessBars" class="exergy-process-bars"></div>
+        </div>
+        <div class="extra-label" id="exergyNote" style="margin-top:6px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TAB 4: GRAPHS ============ -->
+  <div class="tab-panel" id="tab-graphs">
+    <div class="graphs-wrap">
+      <div class="panel graph-ctrl-side">
+        <label class="graph-ctrl-label">Graph type:</label>
+        <select id="graphTypeSelect">
+          <option>T-s Diagram</option>
+          <option>h-s Diagram</option>
+          <option>Efficiency vs. Parameter Sweep</option>
+        </select>
+        <select id="graphSweepParam" style="display:none;"></select>
+
+        <div id="graphOverlayBlock" style="display:none;">
+          <label class="graph-ctrl-label">Overlay saved snapshots:</label>
+          <div id="graphOverlayList" class="lb-overlay-list"></div>
+        </div>
+
+        <div class="tb-spacer"></div>
+        <button class="tb-btn" id="btnGraphExportPng">Export PNG</button>
+        <button class="tb-btn" id="btnGraphExportCsv">Export CSV</button>
+        <div class="extra-label">Scroll to zoom, drag to pan, double-click to reset.</div>
+      </div>
+      <div class="panel graph-canvas-panel">
+        <svg class="diagram" id="graphSvg" viewBox="0 0 700 460" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TAB 5: COMPARE ============ -->
   <div class="tab-panel" id="tab-compare">
     <div class="compare-grid" id="compareGrid">
       <div class="panel compare-list-panel" id="compareListPanel">
@@ -1533,6 +1736,18 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
           </select>
         </div>
 
+        <div class="lb-inline-row">
+          <label class="graph-ctrl-label" style="margin-bottom:0;">Colors:</label>
+          <select id="lbBarTheme">
+            <option value="classic">Classic</option>
+            <option value="vivid">Vivid</option>
+            <option value="sunset">Sunset</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+            <option value="monochrome">Monochrome</option>
+          </select>
+        </div>
+
         <label class="lb-fav-toggle">
           <span>Favorites only</span>
           <input type="checkbox" id="lbFavoritesOnly">
@@ -1544,112 +1759,6 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
       </div>
       <div class="panel diagram-panel leaderboard-scroll" style="padding:10px;">
         <svg class="diagram" id="leaderboardSvg" viewBox="0 0 900 700" preserveAspectRatio="none"></svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ TAB 4: RESULTS TABLE ============ -->
-  <div class="tab-panel" id="tab-results">
-    <div class="results-wrap">
-      <div class="results-header-row">
-        <div class="results-title" id="resultsCycleLabel">Results for: --</div>
-        <button class="side-btn side-btn-primary" id="btnExportCsv" type="button" title="Download performance summary, parameters, and state points as one CSV">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
-          Export CSV
-        </button>
-      </div>
-
-      <div class="results-kpi-grid" id="resultsKpiGrid"></div>
-
-      <div class="panel results-energyflow" id="resultsEnergyFlow"></div>
-
-      <div class="panel power-row">
-        <label>Target Net Power Output (MW):</label>
-        <input type="number" id="targetPower" value="10" min="0.001" step="1">
-        <button class="tb-btn" id="btnCalcPower" style="background:var(--blue);color:#fff;">Calculate</button>
-        <div class="extra-label" id="powerNote" style="flex:1"></div>
-      </div>
-      <div class="tables-row">
-        <div class="panel table-panel">
-          <h3>Performance Summary <span class="table-hint">(click a row to copy)</span></h3>
-          <table class="data-table copyable"><thead><tr><th>Quantity</th><th>Value</th></tr></thead><tbody id="summaryBody"></tbody></table>
-        </div>
-        <div class="panel table-panel">
-          <h3>Full State-Point Table <span class="table-hint">(click a row to copy)</span></h3>
-          <table class="data-table copyable"><thead><tr><th>State</th><th>T (K)</th><th>T (&deg;C)</th><th>s (kJ/kg&middot;K)</th></tr></thead><tbody id="stateBody"></tbody></table>
-        </div>
-      </div>
-      <div class="panel table-panel benchmark-panel" id="benchmarkPanel">
-        <h3>Efficiency vs. Theoretical (Carnot) Limit</h3>
-        <div class="benchmark-hero">
-          <svg class="carnot-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--card-gray)" stroke-width="12"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="url(#carnotRingGrad)" stroke-width="12" stroke-linecap="round"
-              id="carnotRingFill" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
-            <defs><linearGradient id="carnotRingGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--blue)"/><stop offset="100%" stop-color="#22c55e"/>
-            </linearGradient></defs>
-          </svg>
-          <div class="carnot-ring-label">
-            <div class="carnot-ring-pct" id="carnotRingPct">&hellip;</div>
-            <div class="carnot-ring-sub">of Carnot limit</div>
-          </div>
-          <div class="benchmark-hero-stats">
-            <div class="benchmark-hero-stat"><span>This cycle</span><b id="benchThisVal">&hellip;</b></div>
-            <div class="benchmark-hero-stat"><span>Carnot limit</span><b id="benchCarnotVal">&hellip;</b></div>
-          </div>
-        </div>
-        <div class="benchmark-row" id="benchRealRow">
-          <div class="benchmark-label">Typical real-world</div>
-          <div class="gauge-track"><div class="gauge-band" id="benchRealBand"></div></div>
-          <div class="benchmark-value" id="benchRealVal" style="font-size:11.5px;">&hellip;</div>
-        </div>
-        <div class="extra-label" id="benchNote" style="margin-top:6px;"></div>
-      </div>
-
-      <div class="panel table-panel exergy-panel" id="exergyPanel">
-        <div class="exergy-panel-header">
-          <h3 style="margin:0;">Exergy &amp; 2nd-Law Analysis</h3>
-          <div class="exergy-t0-field">
-            <label for="exergyT0">Dead-state T<sub>0</sub>:</label>
-            <input type="number" id="exergyT0" value="298.15" step="0.5" min="0">
-            <span>K</span>
-          </div>
-        </div>
-        <div class="exergy-kpi-grid" id="exergyKpiGrid"></div>
-        <div class="exergy-process-section">
-          <div class="exergy-process-title">Entropy Change by Process <span class="table-hint">(real &Delta;s between states; near-zero means that step is internally reversible)</span></div>
-          <div id="exergyProcessBars" class="exergy-process-bars"></div>
-        </div>
-        <div class="extra-label" id="exergyNote" style="margin-top:6px;"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ TAB 5: GRAPHS ============ -->
-  <div class="tab-panel" id="tab-graphs">
-    <div class="graphs-wrap">
-      <div class="panel graph-ctrl-side">
-        <label class="graph-ctrl-label">Graph type:</label>
-        <select id="graphTypeSelect">
-          <option>T-s Diagram</option>
-          <option>h-s Diagram</option>
-          <option>Efficiency vs. Parameter Sweep</option>
-        </select>
-        <select id="graphSweepParam" style="display:none;"></select>
-
-        <div id="graphOverlayBlock" style="display:none;">
-          <label class="graph-ctrl-label">Overlay saved snapshots:</label>
-          <div id="graphOverlayList" class="lb-overlay-list"></div>
-        </div>
-
-        <div class="tb-spacer"></div>
-        <button class="tb-btn" id="btnGraphExportPng">Export PNG</button>
-        <button class="tb-btn" id="btnGraphExportCsv">Export CSV</button>
-        <div class="extra-label">Scroll to zoom, drag to pan, double-click to reset.</div>
-      </div>
-      <div class="panel graph-canvas-panel">
-        <svg class="diagram" id="graphSvg" viewBox="0 0 700 460" preserveAspectRatio="xMidYMid meet"></svg>
       </div>
     </div>
   </div>
@@ -1739,7 +1848,7 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
   <!-- ============ TAB 9: ENGINEERING TOOLS ============ -->
   <div class="tab-panel" id="tab-tools">
     <div class="tools-wrap">
-      <div class="tools-section-header">
+      <div class="tools-section-header tools-header-hero">
         <h2>Quick Calculators</h2>
       </div>
       <div class="tools-list">
@@ -1749,13 +1858,7 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
             <div class="tool-inputs">
               <div class="tools-row">
                 <label>Category</label>
-                <select id="convCategory">
-                  <option value="temp">Temperature</option>
-                  <option value="pressure">Pressure</option>
-                  <option value="energy">Specific Energy</option>
-                  <option value="power">Power</option>
-                  <option value="vol">Specific Volume</option>
-                </select>
+                <select id="convCategory"></select>
               </div>
               <div class="tools-row">
                 <label>Value</label>
@@ -1843,7 +1946,7 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
       </div>
 
       <div class="tools-section-header" style="margin-top:22px;padding-top:22px;border-top:1px solid var(--border);">
-        <h2>Real-Gas Turbine Cycle Analyzer</h2>
+        <h2>Real Gas Turbine Cycle Analyzer</h2>
         <span style="flex:1;"></span>
         <button class="action-btn btn-neutral" id="btnRgExportCsv" style="width:auto;padding:7px 13px;font-size:11.5px;" title="Download this state table and summary as CSV">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
@@ -1878,7 +1981,7 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
               <div class="tool-answer-line" id="rgSummary">&hellip;</div>
             </div>
             <div class="tools-section">
-              <div class="tools-subhead">Cold-Air-Standard vs. Variable-c<sub style="text-transform:none;">p</sub></div>
+              <div class="tools-subhead">Cold Air Standard vs. Variable c<sub style="text-transform:none;">p</sub></div>
               <div class="tool-answer-line" id="rgCompare">&hellip;</div>
             </div>
           </div>
@@ -2060,16 +2163,16 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
         <div class="ctrl-row ees-group-b">
           <label class="graph-ctrl-label">Theme:</label>
           <select id="eesTheme">
-            <option value="dark" selected>Dark (VS Code)</option>
-            <option value="light">Light</option>
+            <option value="synthwave">Synthwave '84</option>
             <option value="solarized">Solarized Dark</option>
-            <option value="solarizedlight">Solarized Light</option>
             <option value="monokai">Monokai</option>
             <option value="dracula">Dracula</option>
+            <option value="tokyonight">Tokyo Night</option>
             <option value="nord">Nord</option>
-            <option value="githublight">GitHub Light</option>
+            <option value="gruvbox">Gruvbox Dark</option>
             <option value="onedark">One Dark</option>
-            <option value="contrast">High Contrast</option>
+            <option value="cobalt2">Cobalt2</option>
+            <option value="contrast" selected>High Contrast</option>
           </select>
         </div>
         <div class="ctrl-row ees-group-b">
@@ -2166,11 +2269,33 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
         </div>
         <div class="ctrl-row rpt-group-a">
           <label class="graph-ctrl-label">Date:</label>
-          <div class="date-combo-wrap">
-            <input type="date" id="reportDateInput">
-            <button type="button" class="date-icon-btn" id="btnReportDatePicker" title="Pick a date" aria-label="Pick a date">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </button>
+          <div class="date-picker-wrap" id="reportDatePickerWrap">
+            <div class="date-combo-wrap">
+              <input type="date" id="reportDateInput">
+              <button type="button" class="date-icon-btn" id="btnReportDatePicker" title="Pick a date" aria-label="Pick a date">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </button>
+            </div>
+            <div class="date-picker-pop" id="reportDatePickerPop">
+              <div class="dp-header">
+                <button type="button" class="dp-nav-btn" id="dpPrevMonth" title="Previous month" aria-label="Previous month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+                </button>
+                <div class="dp-quickjump" id="dpQuickJump">
+                  <select id="dpMonthSelect"></select>
+                  <select id="dpYearSelect"></select>
+                </div>
+                <button type="button" class="dp-nav-btn" id="dpNextMonth" title="Next month" aria-label="Next month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
+              <div class="dp-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+              <div class="dp-grid" id="dpGrid"></div>
+              <div class="dp-footer">
+                <button type="button" class="dp-link" id="dpClear">Clear</button>
+                <button type="button" class="dp-link" id="dpToday">Today</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2178,8 +2303,8 @@ button.action-btn, .tb-btn, .icon-btn { position: relative; overflow: hidden; }
         <div class="ctrl-row rpt-group-b">
           <label class="graph-ctrl-label">Preset:</label>
           <select id="reportThemePreset">
-            <option value="custom" selected>Custom (use settings below)</option>
-            <option value="professional">Professional Blue</option>
+            <option value="custom">Custom (use settings below)</option>
+            <option value="professional" selected>Professional Blue</option>
             <option value="corporate">Corporate Gray</option>
             <option value="academic">Academic Maroon</option>
             <option value="modern">Modern Teal</option>
@@ -3883,7 +4008,7 @@ function renderTsDiagram(svg, r, opts) {
   const W = rect.width > 20 ? rect.width : 700;
   const H = rect.height > 20 ? rect.height : 480;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  const marginL = 54, marginR = 158, marginT = 16, marginB = 32;
+  const marginL = 54, marginR = 92, marginT = 16, marginB = 32;
   const plotW = W - marginL - marginR, plotH = H - marginT - marginB;
 
   const optimalToggle = document.getElementById('showOptimalOverlay');
@@ -3943,9 +4068,9 @@ function renderTsDiagram(svg, r, opts) {
   }
   svg.appendChild(svgEl('rect', { x: marginL, y: marginT, width: plotW, height: plotH, fill: 'none', stroke: 'var(--border)' }));
 
-  // x-axis drawn as an arrow, extended well past the grid's right edge so the
-  // label above it never touches the grid
-  const axY = marginT + plotH, axXEnd = marginL + plotW + 145;
+  // x-axis drawn as a short arrow just past the grid's right edge, with its
+  // label sitting right after the grid rather than far out in empty space.
+  const axY = marginT + plotH, axXEnd = marginL + plotW + 44;
   svg.appendChild(svgEl('line', { x1: marginL, y1: axY, x2: axXEnd - 9, y2: axY, stroke: 'var(--text)', 'stroke-width': 1.6 }));
   svg.appendChild(svgEl('polygon', {
     points: `${axXEnd},${axY} ${axXEnd - 11},${axY - 4} ${axXEnd - 11},${axY + 4}`, fill: 'var(--text)'
@@ -4357,7 +4482,7 @@ function contrastTextColor(rgbStr) {
   if (!m) return '#ffffff';
   const [r, g, b] = m.map(Number);
   const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-  return lum > 165 ? '#12181f' : '#ffffff';
+  return lum > 148 ? '#12181f' : '#ffffff';
 }
 
 // Wraps a component name onto at most 2 lines (splitting at a word
@@ -4395,7 +4520,39 @@ function pipeLocalTemp(Ti, f) {
   return Ti + Math.sin(f * Math.PI * 5) * 1.6;
 }
 
+let SCHEM_CACHE = { svg: null, r: null, W: 0, H: 0, particles: null };
+
 function renderSchematic(svg, r, phase) {
+  const rect0 = svg.parentElement.getBoundingClientRect();
+  const W0 = rect0.width > 20 ? rect0.width : 800;
+  const H0 = rect0.height > 20 ? rect0.height : 560;
+  if (SCHEM_CACHE.svg === svg && SCHEM_CACHE.r === r && SCHEM_CACHE.W === W0 && SCHEM_CACHE.H === H0 && SCHEM_CACHE.particles) {
+    updateSchematicParticles(r, phase);
+    return;
+  }
+  renderSchematicFull(svg, r, phase);
+}
+
+// Cheap per-frame path: only touches the particle circles' cx/cy/r/fill
+// attributes on the already-built diagram, instead of the ~1000+ node
+// createElementNS/appendChild/addEventListener churn a full rebuild does.
+function updateSchematicParticles(r, phase) {
+  const { particles, n } = SCHEM_CACHE;
+  particles.forEach(pt => {
+    const f = ((phase * pt.speedJ * pt.cycleRate) + pt.i / n + pt.s / pt.count) % 1;
+    const p = pathPointAt(pt.path, f);
+    const nx = -p.ty, ny = p.tx;
+    const localT = pipeLocalTemp(pt.Ti, f);
+    const col = tempToColor(localT, r.Tmin, r.Tmax);
+    const rad = 1.15 + 0.55 * Math.sin(f * Math.PI);
+    pt.el.setAttribute('cx', p.x + nx * pt.lane);
+    pt.el.setAttribute('cy', p.y + ny * pt.lane);
+    pt.el.setAttribute('r', rad);
+    pt.el.setAttribute('fill', col);
+  });
+}
+
+function renderSchematicFull(svg, r, phase) {
   clearSvg(svg);
   const rect = svg.parentElement.getBoundingClientRect();
   const W = rect.width > 20 ? rect.width : 800;
@@ -4586,6 +4743,7 @@ function renderSchematic(svg, r, phase) {
   // by each pipe's own length makes the actual on-screen (pixel) speed
   // consistent across every pipe instead.
   const PX_PER_CYCLE = 300;
+  const particleCache = [];
   pipePaths.forEach((pp, i) => {
     let plen = 0;
     for (let k = 0; k < pp.path.length - 1; k++) {
@@ -4606,9 +4764,12 @@ function renderSchematic(svg, r, phase) {
       const localT = pipeLocalTemp(pp.Ti, f);
       const col = tempToColor(localT, r.Tmin, r.Tmax);
       const rad = 1.15 + 0.55 * Math.sin(f * Math.PI);
-      svg.appendChild(svgEl('circle', { cx: pt.x + nx * lane, cy: pt.y + ny * lane, r: rad, fill: col, opacity: 0.9 }));
+      const el = svgEl('circle', { cx: pt.x + nx * lane, cy: pt.y + ny * lane, r: rad, fill: col, opacity: 0.9 });
+      svg.appendChild(el);
+      particleCache.push({ el, path: pp.path, Ti: pp.Ti, i, s, count, cycleRate, speedJ, lane });
     }
   });
+  SCHEM_CACHE = { svg, r, W, H, particles: particleCache, n };
 
   // temperature legend, bottom-left, using the new blue-to-red scale
   const lx0 = sidePad, lx1 = sidePad + 250, ly = H - 30;
@@ -4631,9 +4792,14 @@ function startAnimation() {
   if (animRAF) return;
   function tick() {
     if (STATE.animPlaying) STATE.animPhase += 0.006 * STATE.animSpeed;
-    const schemSvg = document.getElementById('schematicSvg');
-    if (STATE.lastResult && document.getElementById('tab-sim').classList.contains('active')) {
-      renderSchematic(schemSvg, STATE.lastResult, STATE.animPhase);
+    // Skip entirely while the tab/window isn't visible so it doesn't burn
+    // battery in the background. The per-frame cost itself is now cheap
+    // (see renderSchematic's fast path), so no frame-skipping is needed.
+    if (!document.hidden) {
+      const schemSvg = document.getElementById('schematicSvg');
+      if (STATE.lastResult && document.getElementById('tab-sim').classList.contains('active')) {
+        renderSchematic(schemSvg, STATE.lastResult, STATE.animPhase);
+      }
     }
     animRAF = requestAnimationFrame(tick);
   }
@@ -5389,6 +5555,8 @@ function updateBenchmarkPanel(r) {
     thisVal.textContent = 'N/A';
     thisVal.style.color = 'var(--warn)';
     carnotVal.textContent = hasCarnot ? (r.isCOP ? '&hellip;' : `${fmtNum((1 - refTc / refTh) * 100, 1)}%`) : '&hellip;';
+    document.getElementById('benchGapVal').textContent = 'N/A';
+    document.getElementById('benchRangeChip').style.display = 'none';
     note.textContent = 'No comparison available, this operating point is thermodynamically infeasible.';
     realRow.style.visibility = 'hidden';
     return;
@@ -5398,6 +5566,8 @@ function updateBenchmarkPanel(r) {
     ringPct.textContent = '&ndash;';
     thisVal.textContent = r.isCOP ? fmtNum(r.eff, 2) : `${fmtNum(r.eff * 100, 1)}%`;
     carnotVal.textContent = '&hellip;';
+    document.getElementById('benchGapVal').textContent = '&hellip;';
+    document.getElementById('benchRangeChip').style.display = 'none';
     note.textContent = 'Carnot comparison not applicable for this configuration.';
     realRow.style.visibility = 'hidden';
     return;
@@ -5410,11 +5580,13 @@ function updateBenchmarkPanel(r) {
   ringPct.textContent = fmtNum(pct, 0) + '%';
   thisVal.textContent = r.isCOP ? fmtNum(r.eff, 2) : `${fmtNum(r.eff * 100, 1)}%`;
   carnotVal.textContent = r.isCOP ? fmtNum(carnot, 2) : `${fmtNum(carnot * 100, 1)}%`;
+  document.getElementById('benchGapVal').textContent = r.isCOP ? fmtNum(carnot - r.eff, 2) : `${fmtNum((carnot - r.eff) * 100, 1)} pp`;
   note.textContent = `This cycle reaches ${fmtNum(pct, 0)}% of the theoretical maximum for its ${fmtNum(refTc, 0)}-${fmtNum(refTh, 0)} K temperature span.`;
 
   // Reference band: where real-world hardware typically lands, on the same
   // 0-100%-of-Carnot scale as the ring above.
   const range = carnot > 0 ? parseTypicalRange(applicationsFor(r.name)) : null;
+  const chip = document.getElementById('benchRangeChip');
   if (range && carnot > 0) {
     const barScale = (v) => Math.max(0, Math.min(100, (v / carnot) * 100));
     const loFrac = range.isPercent ? range.lo / 100 : range.lo;
@@ -5424,8 +5596,15 @@ function updateBenchmarkPanel(r) {
     realBand.style.width = Math.max(1.5, right - left) + '%';
     realVal.textContent = range.isPercent ? `${fmtNum(range.lo, 0)}-${fmtNum(range.hi, 0)}%` : `${fmtNum(range.lo, 1)}-${fmtNum(range.hi, 1)}`;
     realRow.style.visibility = 'visible';
+    const actualFrac = r.isCOP ? r.eff : r.eff;
+    chip.style.display = 'inline-block';
+    chip.classList.remove('chip-warn');
+    if (actualFrac > hiFrac) { chip.textContent = 'Above typical range'; }
+    else if (actualFrac < loFrac) { chip.textContent = 'Below typical range'; chip.classList.add('chip-warn'); }
+    else { chip.textContent = 'Within typical range'; }
   } else {
     realRow.style.visibility = 'hidden';
+    chip.style.display = 'none';
   }
 }
 
@@ -5550,6 +5729,26 @@ function attachZoomPan(svg) {
     const p = svg.getAttribute('viewBox').split(' ').map(Number);
     return { x: p[0], y: p[1], w: p[2], h: p[3] };
   }
+  // The diagram's "actual size" (what a fresh render would use) -- computed
+  // live from the container each time rather than cached once, so it stays
+  // correct across window resizes. Zooming out can never go past this, and
+  // panning is always clamped to keep the content inside it, so the
+  // diagram can no longer end up lost off-screen or shrunk into a speck.
+  const HOME_FALLBACK_H = { graphSvg: 460, paramSvg: 500 }[svg.id] || 480;
+  function homeBox() {
+    const rect = svg.parentElement.getBoundingClientRect();
+    const w = rect.width > 20 ? rect.width : 700;
+    const h = rect.height > 20 ? rect.height : HOME_FALLBACK_H;
+    return { w, h };
+  }
+  function clampBox(x, y, w, h) {
+    const home = homeBox();
+    w = Math.min(w, home.w);
+    h = Math.min(h, home.h);
+    x = Math.max(0, Math.min(x, home.w - w));
+    y = Math.max(0, Math.min(y, home.h - h));
+    return { x, y, w, h };
+  }
   svg.addEventListener('wheel', (e) => {
     e.preventDefault();
     const box = currentVB();
@@ -5557,11 +5756,13 @@ function attachZoomPan(svg) {
     const mx = box.x + (e.clientX - rect.left) / rect.width * box.w;
     const my = box.y + (e.clientY - rect.top) / rect.height * box.h;
     const scale = e.deltaY > 0 ? 1.12 : 1 / 1.12;
-    const newW = Math.max(20, Math.min(box.w * scale, 20000));
+    const home = homeBox();
+    const newW = Math.max(20, Math.min(box.w * scale, home.w));
     const newH = box.h * (newW / box.w);
     const nx = mx - (mx - box.x) * (newW / box.w);
     const ny = my - (my - box.y) * (newH / box.h);
-    svg.setAttribute('viewBox', `${nx} ${ny} ${newW} ${newH}`);
+    const c = clampBox(nx, ny, newW, newH);
+    svg.setAttribute('viewBox', `${c.x} ${c.y} ${c.w} ${c.h}`);
   }, { passive: false });
   let dragging = false, lastX = 0, lastY = 0;
   svg.addEventListener('mousedown', (e) => {
@@ -5578,7 +5779,8 @@ function attachZoomPan(svg) {
     if (!rect.width || !rect.height) return;
     const dx = (e.clientX - lastX) / rect.width * box.w;
     const dy = (e.clientY - lastY) / rect.height * box.h;
-    svg.setAttribute('viewBox', `${box.x - dx} ${box.y - dy} ${box.w} ${box.h}`);
+    const c = clampBox(box.x - dx, box.y - dy, box.w, box.h);
+    svg.setAttribute('viewBox', `${c.x} ${c.y} ${c.w} ${c.h}`);
     lastX = e.clientX; lastY = e.clientY;
   });
   window.addEventListener('mouseup', () => { dragging = false; svg.style.cursor = ''; });
@@ -5614,7 +5816,8 @@ function attachZoomPan(svg) {
     if (touchMode === 'pan' && e.touches.length === 1) {
       const dx = (e.touches[0].clientX - tLastX) / rect.width * box.w;
       const dy = (e.touches[0].clientY - tLastY) / rect.height * box.h;
-      svg.setAttribute('viewBox', `${box.x - dx} ${box.y - dy} ${box.w} ${box.h}`);
+      const c = clampBox(box.x - dx, box.y - dy, box.w, box.h);
+      svg.setAttribute('viewBox', `${c.x} ${c.y} ${c.w} ${c.h}`);
       tLastX = e.touches[0].clientX; tLastY = e.touches[0].clientY;
     } else if (touchMode === 'pinch' && e.touches.length === 2) {
       const dist = touchDist(e.touches[0], e.touches[1]);
@@ -5624,11 +5827,13 @@ function attachZoomPan(svg) {
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
         const mx = box.x + (midX - rect.left) / rect.width * box.w;
         const my = box.y + (midY - rect.top) / rect.height * box.h;
-        const newW = Math.max(20, Math.min(box.w * scale, 20000));
+        const home = homeBox();
+        const newW = Math.max(20, Math.min(box.w * scale, home.w));
         const newH = box.h * (newW / box.w);
         const nx = mx - (mx - box.x) * (newW / box.w);
         const ny = my - (my - box.y) * (newH / box.h);
-        svg.setAttribute('viewBox', `${nx} ${ny} ${newW} ${newH}`);
+        const c = clampBox(nx, ny, newW, newH);
+        svg.setAttribute('viewBox', `${c.x} ${c.y} ${c.w} ${c.h}`);
       }
       tLastDist = dist;
     }
@@ -5763,7 +5968,10 @@ function renderHsDiagram(svg, r, overlays) {
 
   const n = r.s.length;
   svg.appendChild(svgEl('line', { x1: xScale(r.s[n - 1]), y1: yScale(mainH[n - 1]), x2: xScale(r.s[0]), y2: yScale(mainH[0]), stroke: '#9aa0ab', 'stroke-width': 1.3, 'stroke-dasharray': '5,4' }));
-  const pts = r.s.map((s, i) => `${xScale(s)},${yScale(mainH[i])}`).join(' ');
+  const hitRect = svgEl('rect', { x: marginL, y: marginT, width: plotW, height: plotH, fill: 'transparent', style: 'cursor:crosshair;' });
+  svg.appendChild(hitRect);
+  const ptPixels = r.s.map((s, i) => [xScale(s), yScale(mainH[i])]);
+  const pts = ptPixels.map(([x, y]) => `${x},${y}`).join(' ');
   svg.appendChild(svgEl('polyline', { points: pts, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'stroke-linejoin': 'round' }));
   r.s.forEach((s, i) => {
     const px = xScale(s), py = yScale(mainH[i]);
@@ -5780,6 +5988,63 @@ function renderHsDiagram(svg, r, overlays) {
     ov.s.forEach((s, k) => svg.appendChild(svgEl('circle', { cx: xScale(s), cy: yScale(ov.h[k]), r: 3.6, fill: col })));
     svg.appendChild(svgEl('rect', { x: marginL + 8, y: marginT + 8 + i * 15, width: 10, height: 10, fill: col }));
     svg.appendChild(svgEl('text', { x: marginL + 22, y: marginT + 17 + i * 15, 'font-size': 10, fill: 'var(--text)' }, ov.name));
+  });
+
+  // interactive crosshair, matching the T-s diagram's hover behavior:
+  // hovering near the plotted path reads off the exact (s, h) at the
+  // nearest point on the actual cycle line.
+  const crossX = svgEl('line', { x1: 0, y1: marginT, x2: 0, y2: marginT + plotH, stroke: 'var(--text-secondary)', 'stroke-width': 1, 'stroke-dasharray': '3,3', opacity: 0, 'pointer-events': 'none' });
+  const crossY = svgEl('line', { x1: marginL, y1: 0, x2: marginL + plotW, y2: 0, stroke: 'var(--text-secondary)', 'stroke-width': 1, 'stroke-dasharray': '3,3', opacity: 0, 'pointer-events': 'none' });
+  const crossDot = svgEl('circle', { cx: 0, cy: 0, r: 6.5, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 2.4, opacity: 0, 'pointer-events': 'none' });
+  const crossDotCenter = svgEl('circle', { cx: 0, cy: 0, r: 1.8, fill: 'var(--accent)', opacity: 0, 'pointer-events': 'none' });
+  const tipBg = svgEl('rect', { x: 0, y: 0, width: 112, height: 52, rx: 6, fill: 'var(--panel)', stroke: 'var(--border)', opacity: 0, 'pointer-events': 'none' });
+  const tipT = svgEl('text', { x: 0, y: 0, 'font-size': 11, 'font-weight': 700, fill: 'var(--text)', opacity: 0, 'pointer-events': 'none' }, '');
+  const tipS = svgEl('text', { x: 0, y: 0, 'font-size': 11, fill: 'var(--text-secondary)', opacity: 0, 'pointer-events': 'none' }, '');
+  const tipSeg = svgEl('text', { x: 0, y: 0, 'font-size': 9.5, fill: 'var(--text-secondary)', opacity: 0, 'pointer-events': 'none' }, '');
+  svg.appendChild(crossX); svg.appendChild(crossY); svg.appendChild(crossDot); svg.appendChild(crossDotCenter);
+  svg.appendChild(tipBg); svg.appendChild(tipT); svg.appendChild(tipS); svg.appendChild(tipSeg);
+
+  function nearestOnHsPath(px, py) {
+    let best = null, bestDist = Infinity;
+    for (let i = 0; i < ptPixels.length - 1; i++) {
+      const [x1, y1] = ptPixels[i], [x2, y2] = ptPixels[i + 1];
+      const dx = x2 - x1, dy = y2 - y1;
+      const lenSq = dx * dx + dy * dy;
+      let t = lenSq > 0 ? ((px - x1) * dx + (py - y1) * dy) / lenSq : 0;
+      t = Math.max(0, Math.min(1, t));
+      const qx = x1 + t * dx, qy = y1 + t * dy;
+      const dist = Math.hypot(px - qx, py - qy);
+      if (dist < bestDist) bestDist = dist, best = { x: qx, y: qy, segIdx: i };
+    }
+    return best;
+  }
+  const xScaleInvHs = makeInverseScale(sMin, sMax, marginL, marginL + plotW);
+  const yScaleInvHs = makeInverseScale(hMin, hMax, marginT + plotH, marginT);
+  hitRect.addEventListener('mousemove', (ev) => {
+    const pt = svg.createSVGPoint();
+    pt.x = ev.clientX; pt.y = ev.clientY;
+    const loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+    const near = nearestOnHsPath(loc.x, loc.y);
+    if (!near) return;
+    const cx = near.x, cy = near.y;
+    const sVal = xScaleInvHs(cx), hVal = yScaleInvHs(cy);
+    crossX.setAttribute('x1', cx); crossX.setAttribute('x2', cx); crossX.setAttribute('opacity', 0.7);
+    crossY.setAttribute('y1', cy); crossY.setAttribute('y2', cy); crossY.setAttribute('opacity', 0.7);
+    crossDot.setAttribute('cx', cx); crossDot.setAttribute('cy', cy); crossDot.setAttribute('opacity', 1);
+    crossDotCenter.setAttribute('cx', cx); crossDotCenter.setAttribute('cy', cy); crossDotCenter.setAttribute('opacity', 1);
+    let boxX = cx + 14, boxY = cy - 58;
+    if (boxX + 112 > marginL + plotW) boxX = cx - 124;
+    if (boxY < marginT) boxY = cy + 14;
+    tipBg.setAttribute('x', boxX); tipBg.setAttribute('y', boxY); tipBg.setAttribute('opacity', 0.97);
+    tipT.setAttribute('x', boxX + 8); tipT.setAttribute('y', boxY + 16); tipT.setAttribute('opacity', 1);
+    tipT.textContent = `h = ${fmtNum(hVal, 1)} kJ/kg`;
+    tipS.setAttribute('x', boxX + 8); tipS.setAttribute('y', boxY + 30); tipS.setAttribute('opacity', 1);
+    tipS.textContent = `s = ${fmtNum(sVal, 4)}`;
+    tipSeg.setAttribute('x', boxX + 8); tipSeg.setAttribute('y', boxY + 44); tipSeg.setAttribute('opacity', 1);
+    tipSeg.textContent = r.labels ? `On: ${r.labels[near.segIdx]} \u2192 ${r.labels[near.segIdx + 1]}` : '';
+  });
+  hitRect.addEventListener('mouseleave', () => {
+    [crossX, crossY, crossDot, crossDotCenter, tipBg, tipT, tipS, tipSeg].forEach(el => el.setAttribute('opacity', 0));
   });
 }
 
@@ -6074,8 +6339,18 @@ function renderLeaderboard() {
     grad.appendChild(svgEl('stop', { offset: '100%', 'stop-color': `hsl(${hue},${sat}%,60%)` }));
     defs.appendChild(grad);
   }
-  addBarGradient('lbGradEff', 212, 62);
-  addBarGradient('lbGradCop', 172, 52);
+  const LB_BAR_THEMES = {
+    classic: { eff: [212, 62], cop: [172, 52] },
+    vivid: { eff: [199, 88], cop: [322, 78] },
+    sunset: { eff: [26, 88], cop: [346, 78] },
+    ocean: { eff: [206, 82], cop: [186, 72] },
+    forest: { eff: [140, 55], cop: [88, 55] },
+    monochrome: { eff: [222, 16], cop: [222, 8] },
+  };
+  const lbTheme = LB_BAR_THEMES[document.getElementById('lbBarTheme').value] || LB_BAR_THEMES.classic;
+  addBarGradient('lbGradEff', lbTheme.eff[0], lbTheme.eff[1]);
+  addBarGradient('lbGradCop', lbTheme.cop[0], lbTheme.cop[1]);
+  const lbAccentEffHue = lbTheme.eff[0], lbAccentCopHue = lbTheme.cop[0];
 
   const sectionCount = (normal.length ? 1 : 0) + (copGroup.length ? 1 : 0);
   const sectionTitleH = 22;
@@ -6141,11 +6416,11 @@ function renderLeaderboard() {
 
   if (normal.length) {
     const maxEff = Math.max(...normal.map(x => x.value), 0.01);
-    drawSection('Heat-Engine Cycles, Thermal Efficiency', normal, 'lbGradEff', 212, maxEff, (v) => fmtNum(v * 100, 1) + '%');
+    drawSection('Heat-Engine Cycles, Thermal Efficiency', normal, 'lbGradEff', lbAccentEffHue, maxEff, (v) => fmtNum(v * 100, 1) + '%');
   }
   if (copGroup.length) {
     const maxCop = Math.max(...copGroup.map(x => x.value), 0.01);
-    drawSection('Refrigeration / Heat Pump, COP', copGroup, 'lbGradCop', 172, maxCop, (v) => 'COP ' + fmtNum(v, 2));
+    drawSection('Refrigeration / Heat Pump, COP', copGroup, 'lbGradCop', lbAccentCopHue, maxCop, (v) => 'COP ' + fmtNum(v, 2));
   }
 }
 
@@ -6644,17 +6919,18 @@ function doReset() {
 // ============================================================
 // Theme toggle
 // ============================================================
-const themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
 function applyEffectiveTheme() {
-  const effective = STATE.themeMode === 'auto' ? (themeMediaQuery.matches ? 'dark' : 'light') : STATE.themeMode;
+  const effective = STATE.themeMode === 'dark' ? 'dark' : 'light';
   STATE.theme = effective;
   document.body.setAttribute('data-theme', effective);
-  const label = STATE.themeMode === 'auto' ? `Auto (${effective === 'dark' ? 'Dark' : 'Light'})` : (effective === 'dark' ? 'Light Mode' : 'Dark Mode');
-  document.getElementById('themeLabel').textContent = label;
-  // re-render current SVGs so their CSS-variable-based colors refresh immediately
-  refreshAll();
-  redrawCompare();
+  document.getElementById('themeLabel').textContent = effective === 'dark' ? 'Light Mode' : 'Dark Mode';
+  // Let the switch's slide/color CSS transition paint first, then do the
+  // heavier recompute+redraw work on the next frame -- doing it inline here
+  // blocked the paint and made the toggle itself feel laggy.
+  requestAnimationFrame(() => {
+    refreshAll();
+    redrawCompare();
+  });
 }
 
 function setTheme(mode) {
@@ -6663,12 +6939,9 @@ function setTheme(mode) {
 }
 
 function toggleTheme() {
-  const order = ['light', 'dark', 'auto'];
-  const next = order[(order.indexOf(STATE.themeMode) + 1) % order.length];
-  setTheme(next);
-  setStatus(`Theme: ${next === 'auto' ? 'Auto (follows system)' : next[0].toUpperCase() + next.slice(1) + ' mode'}`, 'ok');
+  setTheme(STATE.themeMode === 'dark' ? 'light' : 'dark');
+  setStatus(`Theme: ${STATE.themeMode[0].toUpperCase() + STATE.themeMode.slice(1)} mode`, 'ok');
 }
-themeMediaQuery.addEventListener('change', () => { if (STATE.themeMode === 'auto') applyEffectiveTheme(); });
 
 const ACCENT_ORDER = ['blue', 'teal', 'violet', 'emerald', 'crimson', 'amber', 'slate'];
 function selectAccent(name) {
@@ -6685,6 +6958,157 @@ function toggleAccentPicker(forceOpen) {
   const pop = document.getElementById('accentPickerPop');
   const willOpen = forceOpen !== undefined ? forceOpen : !pop.classList.contains('open');
   pop.classList.toggle('open', willOpen);
+}
+
+// ============================================================
+// Custom date picker (Report tab) -- the native OS calendar always
+// renders white/light and ignores the site's dark theme, so this
+// builds a small themed replacement instead.
+// ============================================================
+const DP_MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+let dpViewYear = null, dpViewMonth = null;
+
+function dpParseInputDate() {
+  const v = document.getElementById('reportDateInput').value;
+  if (!v) return null;
+  const [y, m, d] = v.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return { y, m: m - 1, d };
+}
+
+function initReportDatePicker() {
+  const today = new Date();
+  dpViewYear = today.getFullYear();
+  dpViewMonth = today.getMonth();
+  document.getElementById('dpMonthSelect').innerHTML = DP_MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
+  document.getElementById('dpPrevMonth').addEventListener('click', () => { dpShiftMonth(-1); });
+  document.getElementById('dpNextMonth').addEventListener('click', () => { dpShiftMonth(1); });
+  document.getElementById('dpMonthSelect').addEventListener('change', (e) => {
+    dpViewMonth = parseInt(e.target.value, 10);
+    renderDatePicker();
+  });
+  document.getElementById('dpYearSelect').addEventListener('change', (e) => {
+    dpViewYear = parseInt(e.target.value, 10);
+    renderDatePicker();
+  });
+  document.getElementById('dpClear').addEventListener('click', () => {
+    const el = document.getElementById('reportDateInput');
+    el.value = '';
+    STATE.reportDateTouched = true;
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+    closeDatePicker();
+  });
+  document.getElementById('dpToday').addEventListener('click', () => {
+    const t = new Date();
+    dpSelectDate(t.getFullYear(), t.getMonth(), t.getDate());
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#reportDatePickerWrap') && !e.target.closest('#reportDatePickerPop')) closeDatePicker();
+  });
+  window.addEventListener('resize', () => { if (isDatePickerOpen()) closeDatePicker(); });
+  window.addEventListener('scroll', () => { if (isDatePickerOpen()) closeDatePicker(); }, true);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDatePicker();
+  });
+}
+
+function isDatePickerOpen() {
+  return document.getElementById('reportDatePickerPop').classList.contains('open');
+}
+
+function dpShiftMonth(delta) {
+  dpViewMonth += delta;
+  if (dpViewMonth < 0) { dpViewMonth = 11; dpViewYear--; }
+  else if (dpViewMonth > 11) { dpViewMonth = 0; dpViewYear++; }
+  renderDatePicker();
+}
+
+function dpSelectDate(y, m, d) {
+  const el = document.getElementById('reportDateInput');
+  el.value = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  STATE.reportDateTouched = true;
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+  el.dispatchEvent(new Event('change', { bubbles: true }));
+  closeDatePicker();
+}
+
+function toggleDatePicker() {
+  const pop = document.getElementById('reportDatePickerPop');
+  const willOpen = !pop.classList.contains('open');
+  if (willOpen) {
+    // Detach to <body> so no ancestor's scroll/overflow container (the
+    // report sidebar, in particular) can clip the calendar -- the popup
+    // used to render as a cropped sliver because it's wider than the
+    // 260px sidebar column it used to live inside.
+    if (pop.parentElement !== document.body) document.body.appendChild(pop);
+    const btn = document.getElementById('btnReportDatePicker');
+    const anchorRect = btn.getBoundingClientRect();
+    const popWidth = Math.min(280, window.innerWidth * 0.92);
+    let left = anchorRect.right - popWidth;
+    left = Math.max(8, Math.min(left, window.innerWidth - popWidth - 8));
+    let top = anchorRect.bottom + 8;
+    const cur = dpParseInputDate();
+    const t = new Date();
+    dpViewYear = cur ? cur.y : t.getFullYear();
+    dpViewMonth = cur ? cur.m : t.getMonth();
+    renderDatePicker();
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+    // If the popup would run off the bottom of the viewport, open it
+    // upward from the button instead.
+    requestAnimationFrame(() => {
+      const popRect = pop.getBoundingClientRect();
+      if (popRect.bottom > window.innerHeight - 8) {
+        pop.style.top = Math.max(8, anchorRect.top - popRect.height - 8) + 'px';
+      }
+    });
+  }
+  pop.classList.toggle('open', willOpen);
+}
+
+function closeDatePicker() {
+  document.getElementById('reportDatePickerPop').classList.remove('open');
+}
+
+function renderDatePicker() {
+  const mSel = document.getElementById('dpMonthSelect');
+  mSel.value = dpViewMonth;
+  const ySel = document.getElementById('dpYearSelect');
+  const existingYears = Array.from(ySel.options).map(o => parseInt(o.value, 10));
+  if (!existingYears.includes(dpViewYear)) {
+    ySel.innerHTML = '';
+    for (let y = dpViewYear - 60; y <= dpViewYear + 20; y++) ySel.innerHTML += `<option value="${y}">${y}</option>`;
+  }
+  ySel.value = dpViewYear;
+  const grid = document.getElementById('dpGrid');
+  grid.innerHTML = '';
+  const today = new Date();
+  const sel = dpParseInputDate();
+  const firstWeekday = new Date(dpViewYear, dpViewMonth, 1).getDay();
+  const daysInMonth = new Date(dpViewYear, dpViewMonth + 1, 0).getDate();
+  const daysInPrevMonth = new Date(dpViewYear, dpViewMonth, 0).getDate();
+  const cells = [];
+  for (let i = firstWeekday - 1; i >= 0; i--) {
+    cells.push({ y: dpViewMonth === 0 ? dpViewYear - 1 : dpViewYear, m: dpViewMonth === 0 ? 11 : dpViewMonth - 1, d: daysInPrevMonth - i, other: true });
+  }
+  for (let d = 1; d <= daysInMonth; d++) cells.push({ y: dpViewYear, m: dpViewMonth, d, other: false });
+  while (cells.length % 7 !== 0 || cells.length < 42) {
+    const last = cells[cells.length - 1];
+    const next = new Date(last.y, last.m, last.d + 1);
+    cells.push({ y: next.getFullYear(), m: next.getMonth(), d: next.getDate(), other: true });
+  }
+  cells.forEach(c => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'dp-day';
+    if (c.other) btn.classList.add('other-month');
+    if (c.y === today.getFullYear() && c.m === today.getMonth() && c.d === today.getDate()) btn.classList.add('today');
+    if (sel && c.y === sel.y && c.m === sel.m && c.d === sel.d) btn.classList.add('selected');
+    btn.textContent = c.d;
+    btn.addEventListener('click', () => dpSelectDate(c.y, c.m, c.d));
+    grid.appendChild(btn);
+  });
 }
 
 function openWelcome() { document.getElementById('welcomeOverlay').classList.add('open'); }
@@ -7240,6 +7664,32 @@ const UNIT_DEFS_FULL = Object.assign({}, UNIT_DEFS, {
       pF: { label: 'picofarad (pF)', toBase: v => v / 1e12, fromBase: v => v * 1e12 },
     }, default: 'F',
   },
+  accel: {
+    label: 'Acceleration', units: {
+      'm/s2': { label: 'm/s\u00b2', toBase: v => v, fromBase: v => v },
+      'cm/s2': { label: 'cm/s\u00b2 (Gal)', toBase: v => v / 100, fromBase: v => v * 100 },
+      'mm/s2': { label: 'mm/s\u00b2', toBase: v => v / 1000, fromBase: v => v * 1000 },
+      'km/s2': { label: 'km/s\u00b2', toBase: v => v * 1000, fromBase: v => v / 1000 },
+      'ft/s2': { label: 'ft/s\u00b2', toBase: v => v * 0.3048, fromBase: v => v / 0.3048 },
+      'in/s2': { label: 'in/s\u00b2', toBase: v => v * 0.0254, fromBase: v => v / 0.0254 },
+      g: { label: 'standard gravity (g)', toBase: v => v * 9.80665, fromBase: v => v / 9.80665 },
+      'mph/s': { label: 'mph/s', toBase: v => v * 0.44704, fromBase: v => v / 0.44704 },
+      'kmh/s': { label: 'km/h per s', toBase: v => v * 0.277778, fromBase: v => v / 0.277778 },
+    }, default: 'm/s2',
+  },
+  heatcap: {
+    label: 'Heat Capacity / Entropy (total)', units: {
+      'J/K': { label: 'J/K', toBase: v => v, fromBase: v => v },
+      'kJ/K': { label: 'kJ/K', toBase: v => v * 1000, fromBase: v => v / 1000 },
+      'MJ/K': { label: 'MJ/K', toBase: v => v * 1e6, fromBase: v => v / 1e6 },
+      'cal/K': { label: 'cal/K', toBase: v => v * 4.184, fromBase: v => v / 4.184 },
+      'kcal/K': { label: 'kcal/K', toBase: v => v * 4184, fromBase: v => v / 4184 },
+      'BTU/R': { label: 'BTU/\u00b0R', toBase: v => v * 1899.1008, fromBase: v => v / 1899.1008 },
+      'Wh/K': { label: 'Wh/K', toBase: v => v * 3600, fromBase: v => v / 3600 },
+      'erg/K': { label: 'erg/K', toBase: v => v * 1e-7, fromBase: v => v / 1e-7 },
+      'eV/K': { label: 'eV/K', toBase: v => v * 1.602176634e-19, fromBase: v => v / 1.602176634e-19 },
+    }, default: 'J/K',
+  },
 });
 
 // Comprehensive thermodynamic and physical constants reference. Values
@@ -7252,11 +7702,11 @@ const CONSTANTS_DATA = [
   { cat: 'Universal Constants', sym: 'R<sub>u</sub>', name: 'Universal gas constant', val: '8.31446', units: 'kJ/kmol\u00b7K' },
   { cat: 'Universal Constants', sym: 'R<sub>u</sub>', name: 'Universal gas constant', val: '1545.35', units: 'ft\u00b7lbf/lbmol\u00b7\u00b0R' },
   { cat: 'Universal Constants', sym: 'N<sub>A</sub>', name: "Avogadro's number", val: '6.02214076\u00d710<sup>23</sup>', units: '1/mol' },
-  { cat: 'Universal Constants', sym: 'k<sub>B</sub>', name: 'Boltzmann constant', val: '1.380649\u00d710<sup>&minus;23</sup>', units: 'J/K' },
+  { cat: 'Universal Constants', sym: 'k<sub>B</sub>', name: 'Boltzmann constant', val: '1.380649\u00d710<sup>&minus;23</sup>', units: 'J/K', conv: { cat: 'heatcap', unit: 'J/K', value: 1.380649e-23 } },
   { cat: 'Universal Constants', sym: 'h', name: 'Planck constant', val: '6.62607015\u00d710<sup>&minus;34</sup>', units: 'J\u00b7s' },
   { cat: 'Universal Constants', sym: 'c', name: 'Speed of light in vacuum', val: '2.99792458\u00d710<sup>8</sup>', units: 'm/s', conv: { cat: 'velocity', unit: 'm/s', value: 2.99792458e8 } },
   { cat: 'Universal Constants', sym: '&sigma;', name: 'Stefan Boltzmann constant', val: '5.670374\u00d710<sup>&minus;8</sup>', units: 'W/m<sup>2</sup>\u00b7K<sup>4</sup>' },
-  { cat: 'Universal Constants', sym: 'g', name: 'Standard gravity', val: '9.80665', units: 'm/s<sup>2</sup>' },
+  { cat: 'Universal Constants', sym: 'g', name: 'Standard gravity', val: '9.80665', units: 'm/s<sup>2</sup>', conv: { cat: 'accel', unit: 'm/s2', value: 9.80665 } },
   { cat: 'Universal Constants', sym: 'G', name: 'Gravitational constant', val: '6.67430\u00d710<sup>&minus;11</sup>', units: 'N\u00b7m<sup>2</sup>/kg<sup>2</sup>' },
   { cat: 'Universal Constants', sym: 'F', name: 'Faraday constant', val: '96485.332', units: 'C/mol' },
   { cat: 'Universal Constants', sym: 'e', name: 'Elementary charge', val: '1.602176634\u00d710<sup>&minus;19</sup>', units: 'C', conv: { cat: 'charge', unit: 'C', value: 1.602176634e-19 } },
@@ -7301,9 +7751,15 @@ const CONSTANTS_DATA = [
   { cat: 'Common Conversion Anchors', sym: '1 kWh', name: 'Kilowatt hour', val: '3600', units: 'kJ', conv: { cat: 'energytotal', unit: 'kJ', value: 3600 } },
 ];
 
+function populateConvCategorySelect() {
+  const sel = document.getElementById('convCategory');
+  const keys = Object.keys(UNIT_DEFS_FULL).sort((a, b) => UNIT_DEFS_FULL[a].label.localeCompare(UNIT_DEFS_FULL[b].label));
+  sel.innerHTML = keys.map(k => `<option value="${k}">${UNIT_DEFS_FULL[k].label}</option>`).join('');
+  sel.value = 'temp';
+}
 function populateConvUnits() {
   const cat = document.getElementById('convCategory').value;
-  const def = UNIT_DEFS[cat];
+  const def = UNIT_DEFS_FULL[cat];
   const sel = document.getElementById('convUnit');
   sel.innerHTML = Object.keys(def.units).map(k => `<option value="${k}">${def.units[k].label}</option>`).join('');
   sel.value = def.default;
@@ -7311,7 +7767,7 @@ function populateConvUnits() {
 }
 function updateConverter() {
   const cat = document.getElementById('convCategory').value;
-  const def = UNIT_DEFS[cat];
+  const def = UNIT_DEFS_FULL[cat];
   const fromUnit = document.getElementById('convUnit').value;
   const val = parseFloat(document.getElementById('convValue').value);
   const tbody = document.querySelector('#convTable tbody');
@@ -7680,7 +8136,7 @@ function renderEesCode() {
   out.classList.add(`ees-ff-${fontFamily}`);
   const theme = document.getElementById('eesTheme').value;
   const wrap = document.querySelector('.ees-code-wrap');
-  ['dark', 'light', 'solarized', 'solarizedlight', 'monokai', 'dracula', 'nord', 'githublight', 'onedark', 'contrast'].forEach(c => { out.classList.remove(`ees-theme-${c}`); if (wrap) wrap.classList.remove(`ees-theme-${c}`); });
+  ['synthwave', 'solarized', 'monokai', 'dracula', 'tokyonight', 'nord', 'gruvbox', 'onedark', 'cobalt2', 'contrast'].forEach(c => { out.classList.remove(`ees-theme-${c}`); if (wrap) wrap.classList.remove(`ees-theme-${c}`); });
   out.classList.add(`ees-theme-${theme}`);
   if (wrap) wrap.classList.add(`ees-theme-${theme}`);
   const wrapMode = document.getElementById('eesWrapMode').value;
@@ -7985,32 +8441,41 @@ function reportNomenclatureTable() {
   ];
   return `<table><thead><tr><th>Symbol</th><th>Meaning</th><th>Units</th></tr></thead><tbody>${rows.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join('')}</tbody></table>`;
 }
+function reportCiteMarker(nums) {
+  if (!STATE.reportSections || !STATE.reportSections.has('references')) return '';
+  return ` <sup style="color:var(--rpt-accent, var(--blue));font-weight:700;">[${nums.join(',')}]</sup>`;
+}
 function reportReferencesHtml() {
   const style = document.getElementById('reportCitationStyle') ? document.getElementById('reportCitationStyle').value : 'numbered';
   const refs = [
-    { authors: 'Cengel, Y. A., &amp; Boles, M. A.', authorsMla: 'Cengel, Yunus A., and Michael A. Boles', title: 'Thermodynamics: An Engineering Approach', publisher: 'McGraw-Hill' },
-    { authors: 'Moran, M. J., Shapiro, H. N., Boettner, D. D., &amp; Bailey, M. B.', authorsMla: 'Moran, Michael J., et al', title: 'Fundamentals of Engineering Thermodynamics', publisher: 'Wiley' },
-    { authors: 'TAS', authorsMla: 'TAS', title: 'Thermodynamics Analysis Studio', publisher: 'Generated report source' },
+    { authors: 'Cengel, Y. A., &amp; Boles, M. A.', authorsMla: 'Cengel, Yunus A., and Michael A. Boles', title: 'Thermodynamics: An Engineering Approach', publisher: 'McGraw-Hill', year: '2015', edition: '8th ed.' },
+    { authors: 'Moran, M. J., Shapiro, H. N., Boettner, D. D., &amp; Bailey, M. B.', authorsMla: 'Moran, Michael J., et al', title: 'Fundamentals of Engineering Thermodynamics', publisher: 'Wiley', year: '2014', edition: '8th ed.' },
+    { authors: 'Borgnakke, C., &amp; Sonntag, R. E.', authorsMla: 'Borgnakke, Claus, and Richard E. Sonntag', title: 'Fundamentals of Thermodynamics', publisher: 'Wiley', year: '2013', edition: '8th ed.' },
+    { authors: 'Rogers, G. F. C., &amp; Mayhew, Y. R.', authorsMla: 'Rogers, G. F. C., and Y. R. Mayhew', title: 'Thermodynamic and Transport Properties of Fluids', publisher: 'Blackwell', year: '1994', edition: '5th ed.' },
+    { authors: 'ASHRAE', authorsMla: 'ASHRAE', title: 'ASHRAE Handbook &mdash; Fundamentals', publisher: 'American Society of Heating, Refrigerating and Air-Conditioning Engineers', year: '2021', edition: '' },
+    { authors: 'Lemmon, E. W., Bell, I. H., Huber, M. L., &amp; McLinden, M. O.', authorsMla: 'Lemmon, Eric W., et al', title: 'NIST Reference Fluid Thermodynamic and Transport Properties Database (REFPROP)', publisher: 'National Institute of Standards and Technology', year: '2018', edition: 'v10.0' },
+    { authors: 'TAS', authorsMla: 'TAS', title: 'Thermodynamics Analysis Studio', publisher: 'Generated report source', year: '', edition: '' },
   ];
+  const ed = r => r.edition ? `, ${r.edition}` : '';
   if (style === 'apa') {
-    return `<div class="rpt-ref-apa">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors} (n.d.). <i>${r.title}</i>. ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-apa">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors} (${r.year || 'n.d.'}). <i>${r.title}</i>${ed(r)}. ${r.publisher}.</p>`).join('')}</div>`;
   }
   if (style === 'ieee') {
-    return `<div class="rpt-ref-ieee">${refs.map((r, i) => `<p>[${i + 1}] ${r.authors}, <i>${r.title}</i>. ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-ieee">${refs.map((r, i) => `<p>[${i + 1}] ${r.authors}, <i>${r.title}</i>${ed(r)}. ${r.publisher}${r.year ? ', ' + r.year : ''}.</p>`).join('')}</div>`;
   }
   if (style === 'mla') {
-    return `<div class="rpt-ref-mla">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authorsMla}. <i>${r.title}</i>. ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-mla">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authorsMla}. <i>${r.title}</i>${ed(r)}. ${r.publisher}${r.year ? ', ' + r.year : ''}.</p>`).join('')}</div>`;
   }
   if (style === 'chicago') {
-    return `<div class="rpt-ref-chicago">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors}. <i>${r.title}</i>. ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-chicago">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors}. <i>${r.title}</i>${ed(r)}. ${r.publisher}${r.year ? ', ' + r.year : ''}.</p>`).join('')}</div>`;
   }
   if (style === 'harvard') {
-    return `<div class="rpt-ref-harvard">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors} (n.d.) <i>${r.title}</i>, ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-harvard">${refs.map(r => `<p style="margin-left:24px;text-indent:-24px;">${r.authors} (${r.year || 'n.d.'}) <i>${r.title}</i>${ed(r)}, ${r.publisher}.</p>`).join('')}</div>`;
   }
   if (style === 'vancouver') {
-    return `<div class="rpt-ref-vancouver">${refs.map((r, i) => `<p>${i + 1}. ${r.authors}. ${r.title}. ${r.publisher}.</p>`).join('')}</div>`;
+    return `<div class="rpt-ref-vancouver">${refs.map((r, i) => `<p>${i + 1}. ${r.authors}. ${r.title}${ed(r)}. ${r.publisher}${r.year ? '; ' + r.year : ''}.</p>`).join('')}</div>`;
   }
-  return `<ol>${refs.map(r => `<li>${r.authors} <i>${r.title}.</i> ${r.publisher}.</li>`).join('')}</ol>`;
+  return `<ol>${refs.map(r => `<li>${r.authors} <i>${r.title}${ed(r)}.</i> ${r.publisher}${r.year ? ', ' + r.year : ''}.</li>`).join('')}</ol>`;
 }
 function reportGlossaryTable() {
   const rows = [
@@ -8085,9 +8550,9 @@ function reportSectionHtml(id, ctx) {
         <li>Identify concrete opportunities to improve performance.</li>
       </ul></div>`;
     case 'theory':
-      return `<div class="rpt-section"><h2>${num}Theory &amp; Background</h2>${reportTheoryText(r, def)}${tbl('State-point temperatures and entropies for the ' + (r.name || STATE.cycleName), reportProcessTable(r))}</div>`;
+      return `<div class="rpt-section"><h2>${num}Theory &amp; Background</h2>${reportTheoryText(r, def)}${reportCiteMarker([1, 3])}${tbl('State-point temperatures and entropies for the ' + (r.name || STATE.cycleName), reportProcessTable(r))}</div>`;
     case 'methodology':
-      return `<div class="rpt-section"><h2>${num}Methodology</h2>${reportMethodologyText()}</div>`;
+      return `<div class="rpt-section"><h2>${num}Methodology</h2>${reportMethodologyText()}${reportCiteMarker([2])}</div>`;
     case 'assumptions':
       return `<div class="rpt-section"><h2>${num}Assumptions &amp; Limitations</h2>${reportAssumptionsLeadIn()}<ul>${reportAssumptionsList(r).map(x => `<li>${x}</li>`).join('')}</ul></div>`;
     case 'parameters':
@@ -8803,7 +9268,7 @@ function updateRealGasTool() {
   if (!isFinite(Tin) || Tin <= 0 || !isFinite(Tmax) || Tmax <= Tin || !isFinite(rp) || rp <= 1 ||
     !isFinite(etaC) || etaC <= 0 || etaC > 1 || !isFinite(etaT) || etaT <= 0 || etaT > 1 || !epsValid) {
     tbody.innerHTML = '';
-    summary.innerHTML = '<span style="color:var(--warn)">Enter valid inputs: T_max &gt; T_in, pressure ratio &gt; 1, efficiencies between 0-100%.</span>';
+    summary.innerHTML = '<span style="color:var(--warn)">Enter valid inputs: T<sub>max</sub> &gt; T<sub>in</sub>, pressure ratio &gt; 1, efficiencies between 0-100%.</span>';
     compare.textContent = '';
     clearSvg(schematicSvg); clearSvg(tsSvg);
     rgLastCsv = null;
@@ -8825,16 +9290,16 @@ function updateRealGasTool() {
   renderTsDiagram(tsSvg, { name: topoInfo.label, T: r.states.map(s => s.T), s: r.states.map(s => s.s), labels: r.states.map(s => s.n.match(/^\S+/)[0]), Tmin: r.Tmin, Tmax: r.Tmax, eff: r.eff, isCOP: false });
 
   if (!feasible) {
-    summary.innerHTML = '<span style="color:var(--warn)">Not feasible at these settings, net work is zero or negative, or efficiency is out of a physical range (this is a real result: low turbine efficiency at a high single-stage pressure ratio genuinely can\'t produce net work, try Intercooled, Reheat, or Ultimate, a higher T_max, or higher component efficiencies).</span>';
+    summary.innerHTML = '<span style="color:var(--warn)">Not feasible at these settings, net work is zero or negative, or efficiency is out of a physical range (this is a real result: low turbine efficiency at a high single-stage pressure ratio genuinely can\'t produce net work, try Intercooled, Reheat, or Ultimate, a higher T<sub>max</sub>, or higher component efficiencies).</span>';
     compare.textContent = '';
     rgLastCsv = null;
     return;
   }
-  summary.innerHTML = `W_comp = <b>${fmtNum(r.Wcomp, 2)}</b> kJ/kg &nbsp;|&nbsp; W_turb = <b>${fmtNum(r.Wturb, 2)}</b> kJ/kg &nbsp;|&nbsp; W_net = <b>${fmtNum(r.Wnet, 2)}</b> kJ/kg<br>Q_in = <b>${fmtNum(r.Qin, 2)}</b> kJ/kg &nbsp;|&nbsp; &eta;_th = <b>${fmtNum(r.eff * 100, 2)}%</b> &nbsp;|&nbsp; mass flow for ${fmtNum(targetMW, 2)} MW = <b>${fmtNum(r.mdot, 2)}</b> kg/s`;
+  summary.innerHTML = `W<sub>comp</sub> = <b>${fmtNum(r.Wcomp, 2)}</b> kJ/kg &nbsp;|&nbsp; W<sub>turb</sub> = <b>${fmtNum(r.Wturb, 2)}</b> kJ/kg &nbsp;|&nbsp; W<sub>net</sub> = <b>${fmtNum(r.Wnet, 2)}</b> kJ/kg<br>Q<sub>in</sub> = <b>${fmtNum(r.Qin, 2)}</b> kJ/kg &nbsp;|&nbsp; &eta;<sub>th</sub> = <b>${fmtNum(r.eff * 100, 2)}%</b> &nbsp;|&nbsp; mass flow for ${fmtNum(targetMW, 2)} MW = <b>${fmtNum(r.mdot, 2)}</b> kg/s`;
 
   const ref = coldAirBraytonReference(topo, inp);
   const diff = (r.eff - ref.eff) * 100;
-  compare.innerHTML = `Cold-air-standard (constant c<sub>p</sub>, same inputs): <b>${fmtNum(ref.eff * 100, 2)}%</b><br>Variable-c<sub>p</sub> real air (this tool): <b>${fmtNum(r.eff * 100, 2)}%</b><br><span style="font-weight:400;font-size:11px;">Difference: ${diff >= 0 ? '+' : ''}${fmtNum(diff, 2)} percentage points, this is the size of the gap the constant-property assumption introduces for this operating range.</span>`;
+  compare.innerHTML = `Cold air standard (constant c<sub>p</sub>, same inputs): <b>${fmtNum(ref.eff * 100, 2)}%</b><br>Variable c<sub>p</sub> real air (this tool): <b>${fmtNum(r.eff * 100, 2)}%</b><br><span style="font-weight:400;font-size:11px;">Difference: ${diff >= 0 ? '+' : ''}${fmtNum(diff, 2)} percentage points, this is the size of the gap the constant-property assumption introduces for this operating range.</span>`;
 
   const esc = (v) => String(v).replace(/"/g, '""');
   const row = (section, field, value) => `"${esc(section)}","${esc(field)}","${esc(value)}"\n`;
@@ -8870,6 +9335,7 @@ function doExportRealGasCsv() {
 }
 
 function initToolsTab() {
+  populateConvCategorySelect();
   populateConvUnits();
   document.getElementById('convCategory').addEventListener('change', populateConvUnits);
   document.getElementById('convUnit').addEventListener('change', updateConverter);
@@ -9041,6 +9507,7 @@ function init() {
   document.getElementById('lbFavoritesOnly').addEventListener('change', renderLeaderboard);
   document.getElementById('lbSortDir').addEventListener('change', renderLeaderboard);
   document.getElementById('lbShowLimit').addEventListener('change', renderLeaderboard);
+  document.getElementById('lbBarTheme').addEventListener('change', renderLeaderboard);
 
   const lbSearch = document.getElementById('lbSearchFilter');
   lbSearch.addEventListener('input', () => { renderLbSuggestions(lbSearch.value); renderLeaderboard(); });
@@ -9090,16 +9557,7 @@ function init() {
     }
   });
 
-  // Cursor-tracked highlight on action buttons (feeds the --mx/--my CSS vars
-  // used by the button::after radial-glow hover effect).
-  document.querySelectorAll('button.action-btn').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      btn.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width) * 100}%`);
-      btn.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height) * 100}%`);
-    });
-  });
-
+  
   document.getElementById('btnNew').addEventListener('click', doNew);
   document.getElementById('btnOpen').addEventListener('click', doOpen);
   document.getElementById('btnSave').addEventListener('click', doSave);
@@ -9142,6 +9600,11 @@ function init() {
   document.getElementById('graphTypeSelect').addEventListener('change', onGraphTypeChanged);
   document.getElementById('graphSweepParam').addEventListener('change', refreshGraphsTab);
   document.getElementById('btnRunSweep').addEventListener('click', runParamSweep);
+  ['paramXSelect', 'paramYSelect', 'paramZMetric'].forEach(id => {
+    document.getElementById(id).addEventListener('change', () => {
+      if (STATE.lastHeatmap) runParamSweep();
+    });
+  });
   document.getElementById('paramZMetric').addEventListener('change', () => { if (STATE.lastHeatmap) runParamSweep(); });
   document.getElementById('btnParamSaveRun').addEventListener('click', saveCurrentSweep);
   document.getElementById('btnParamExportCsv').addEventListener('click', exportParamSweepCsv);
@@ -9174,14 +9637,14 @@ function init() {
     if (cb.checked) STATE.graphOverlaySelection.add(idx); else STATE.graphOverlaySelection.delete(idx);
     refreshGraphsTab();
   });
-  document.getElementById('targetPower').addEventListener('change', () => refreshResultsTable(STATE.lastResult));
+  document.getElementById('targetPower').addEventListener('input', () => refreshResultsTable(STATE.lastResult));
   document.getElementById('exergyT0').addEventListener('input', () => { if (STATE.lastResult) updateExergyPanel(STATE.lastResult); });
 
   document.getElementById('reportDateInput').value = new Date().toISOString().slice(0, 10);
   document.getElementById('reportDateInput').addEventListener('input', () => { STATE.reportDateTouched = true; });
+  initReportDatePicker();
   document.getElementById('btnReportDatePicker').addEventListener('click', () => {
-    const el = document.getElementById('reportDateInput');
-    if (el.showPicker) el.showPicker(); else el.focus();
+    toggleDatePicker();
   });
   ['reportFormat', 'reportTitleInput', 'reportAuthorInput', 'reportInstitutionInput', 'reportCourseInput', 'reportDateInput', 'reportAccentInput', 'reportFontSelect', 'reportFontSize', 'reportPaperSelect', 'reportNumberingSelect', 'reportLineSpacing', 'reportMargins', 'reportHeadingStyle', 'reportCitationStyle', 'reportLogoSelect', 'reportFooterSelect'].forEach(id => {
     const el = document.getElementById(id);
@@ -9189,6 +9652,7 @@ function init() {
     el.addEventListener('change', renderReportPreview);
   });
   document.getElementById('reportThemePreset').addEventListener('change', () => { applyReportThemePreset(); renderReportPreview(); });
+  applyReportThemePreset();
   document.getElementById('reportSectionList').addEventListener('change', (e) => {
     const cb = e.target.closest('[data-section]');
     if (!cb) return;
