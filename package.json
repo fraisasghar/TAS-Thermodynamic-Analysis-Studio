@@ -1,0 +1,14 @@
+{
+  "name": "tas-thermodynamic-analysis-studio",
+  "version": "1.0.0",
+  "description": "TAS: Thermodynamics Analysis Studio - an offline, single-file simulator covering 20 power, refrigeration, and heat-pump cycles",
+  "private": true,
+  "scripts": {
+    "install": "echo 'Dependencies installed successfully'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  },
+  "author": "fraisasghar",
+  "license": "MIT"
+}
