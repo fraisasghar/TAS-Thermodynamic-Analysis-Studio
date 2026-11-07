@@ -1,3 +1,6 @@
+
+<!--------|---------|---------|------------------- Main Banner  ----------------------------------------------------------------->
+
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:212529,50:495057,100:9c4221&height=200&section=header&text=TAS%20Lab&fontSize=60&fontAlign=50&fontAlignY=40&animation=fadeIn&fontColor=ffffff&desc=Thermodynamics%20Analysis%20Studio%20|%2020%20Cycles%20|%20Live%20Simulation%20|%20EES%20Export%20|%20Full%20Reports&descAlign=50&descAlignY=68&descSize=20&descColor=e0fbfc&shadow=true" alt="Header" />
 </div>
